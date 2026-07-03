@@ -30,14 +30,9 @@ const contactInfo = [
     title: "Opening Hours",
     value: "Mon - Sat: 9:00 AM - 8:00 PM",
   },
-  {
-    icon: MapPin,
-    title: "Our Location",
-    value: "SCO 123, Sector 34-A, Chandigarh",
-  },
 ];
 
-const cities = ["Chandigarh", "Mohali", "Panchkula", "Delhi NCR", "Other"];
+const cities = ["Delhi", "Noida", "Jaipur", "Gurgaon", "NCR", "Others"];
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -63,8 +58,7 @@ const ContactUs = () => {
     if (formData.phoneNumber.length !== 10)
       newErrors.phoneNumber = "Enter a valid 10-digit number";
     if (!formData.city) newErrors.city = "Please select a city";
-    if (!formData.message.trim())
-      newErrors.message = "Please type your message";
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -77,15 +71,12 @@ const ContactUs = () => {
 
     setIsSubmitting(true);
     try {
-      await axios.post(
-        `https://backend1-4z5g.onrender.com/api/appointments/contact-us`,
-        {
-          patientName: formData.patientName,
-          phoneNumber: formData.phoneNumber,
-          patientCity: formData.city,
-          patientMessage: formData.message,
-        },
-      );
+      await axios.post(`${BASE_URL}/api/appointments/contact-us`, {
+        patientName: formData.patientName,
+        phoneNumber: formData.phoneNumber,
+        patientCity: formData.city,
+        patientMessage: formData.message,
+      });
       setIsSuccess(true);
       setFormData({ patientName: "", phoneNumber: "", city: "", message: "" });
     } catch (error) {
@@ -120,9 +111,9 @@ const ContactUs = () => {
       </section>
 
       {/* Split Section: Info card + Form card */}
-      <section className="max-w-6xl mx-auto px-4 pb-16 grid md:grid-cols-2 gap-8 items-start">
+      <section className="max-w-6xl mx-auto px-4  pb-16 grid md:grid-cols-2 gap-8 items-start">
         {/* Left: Contact Info Card */}
-        <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8">
+        <div className="bg-white rounded-3xl  shadow-sm border border-gray-100 p-8">
           <h2 className="text-xl font-bold text-gray-900 mb-2">
             Contact Information
           </h2>
@@ -148,7 +139,7 @@ const ContactUs = () => {
             ))}
           </div>
 
-          <div className="mt-8 pt-6 border-t border-gray-100 flex items-center gap-2 text-red-600 text-sm font-medium">
+          <div className="mt-8 pt-6 border-t py-4 border-gray-100 flex items-center gap-2 text-red-600 text-sm font-medium">
             <PhoneCall size={16} />
             Emergency? Call{" "}
             <a href="tel:+919876543210" className="underline font-bold">

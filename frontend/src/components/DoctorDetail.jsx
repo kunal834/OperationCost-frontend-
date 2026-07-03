@@ -257,7 +257,6 @@ const DoctorDetail = () => {
         </div>
 
         {/* Specialities + Education — accordion style */}
-        {/* Specialities + Education — accordion style */}
         <div className="bg-white rounded-3xl shadow-sm border border-gray-100 px-5 sm:px-8 mt-6">
           <AccordionSection
             title={`${doctor.name.replace(/^Dr\.?\s*/i, "")}'s Specialities & Expertise`}

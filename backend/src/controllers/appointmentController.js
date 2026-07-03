@@ -109,7 +109,7 @@ export const contactUs = async (req, res) => {
   try {
     const { patientName, phoneNumber, patientCity, patientMessage } = req.body;
 
-    if (!patientName || !phoneNumber || !patientCity || !patientMessage) {
+    if (!patientName || !phoneNumber || !patientCity) {
       return res.status(400).json({
         success: false,
         message: "All fields are required.",

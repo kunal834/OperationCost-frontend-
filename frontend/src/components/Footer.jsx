@@ -12,17 +12,18 @@ const quickLinks = [
   { label: "Home", path: "/" },
   { label: "About Us", path: "/about" },
   { label: "Doctors", path: "/doctors" },
-  { label: "Treatments", path: "/treatments" },
+  { label: "Treatments", path: "/treatment/knee-replacement" },
   { label: "Contact", path: "/contact" },
 ];
 
 const treatmentLinks = [
   { label: "Knee Replacement", path: "/treatment/knee-replacement" },
-  { label: "Hip Replacement", path: "/treatment/hip-replacement" },
+  { label: "Carpal Tunnel Syndrome", path: "/treatment/carpal-tunnel" },
+  { label: "ACL Tear Treatment", path: "/treatment/acl-tear" },
+  { label: "Meniscus Tear Treatment", path: "/treatment/meniscus-tear" },
+  { label: "Hip Replacement Surgery", path: "/treatment/hip-replacement" },
   { label: "Spine Surgery", path: "/treatment/spine-surgery" },
-  { label: "ACL Reconstruction", path: "/treatment/acl-reconstruction" },
-  { label: "Sports Injury", path: "/treatment/sports-injury" },
-  { label: "Arthritis Treatment", path: "/treatment/arthritis" },
+
 ];
 
 const socialLinks = [

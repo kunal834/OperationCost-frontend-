@@ -5,13 +5,21 @@ import { usePopup } from "../context/PopupContext";
 
 const treatments = [
   { label: "Knee Replacement", path: "/treatment/knee-replacement" },
-  { label: "Hip Replacement", path: "/treatment/hip-replacement" },
+  { label: "Carpal Tunnel Syndrome", path: "/treatment/carpal-tunnel" },
+  { label: "ACL Tear Treatment", path: "/treatment/acl-tear" },
+  { label: "Meniscus Tear Treatment", path: "/treatment/meniscus-tear" },
+  { label: "Hip Replacement Surgery", path: "/treatment/hip-replacement" },
   { label: "Spine Surgery", path: "/treatment/spine-surgery" },
-  { label: "ACL Reconstruction", path: "/treatment/acl-reconstruction" },
-  { label: "Sports Injury", path: "/treatment/sports-injury" },
-  { label: "Fracture Care", path: "/treatment/fracture-care" },
-  { label: "Arthritis Treatment", path: "/treatment/arthritis" },
-  { label: "Joint Replacement", path: "/treatment/joint-replacement" },
+  { label: "Shoulder Dislocation", path: "/treatment/shoulder-dislocation" },
+  { label: "Shoulder Replacement", path: "/treatment/shoulder-replacement" },
+  { label: "Rotator Cuff Repair ", path: "/treatment/rotator-cuff-repair" },
+  { label: "Arthroscopy Surgery", path: "/treatment/arthroscopy" },
+  { label: "Knee Arthroscopy", path: "/treatment/knee-arthroscopy" },
+  { label: "Shoulder Arthroscopy", path: "/treatment/shoulder-arthroscopy" },
+  {
+    label: "Total Knee Replacement",
+    path: "/treatment/total-knee-replacement",
+  },
 ];
 
 const navLinks = [

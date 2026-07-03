@@ -9,6 +9,7 @@ import {
   Quote,
   ArrowRight,
 } from "lucide-react";
+import { usePopup } from "../context/PopupContext"; // ✅ sirf named import, duplicate hataya
 
 const stats = [
   { label: "Surgeries Performed", value: "500+", icon: Stethoscope },
@@ -80,6 +81,8 @@ const testimonials = [
 ];
 
 const AboutUs = () => {
+  const { openPopup } = usePopup(); // ✅ context se function le rahe hain, local state nahi
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -101,7 +104,10 @@ const AboutUs = () => {
               through our doors.
             </p>
             <div className="flex items-center gap-4 mt-6">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors inline-flex items-center gap-2 cursor-pointer">
+              <button
+                onClick={openPopup} // ✅ pehle: () => showPopup() jo error deta tha
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors inline-flex items-center gap-2 cursor-pointer"
+              >
                 Book Consultation
                 <ArrowRight size={18} />
               </button>
@@ -297,7 +303,10 @@ const AboutUs = () => {
         <p className="text-gray-500 mb-6">
           Book a free consultation with our orthopedic experts today.
         </p>
-        <button className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold transition-colors inline-flex items-center gap-2">
+        <button
+          onClick={openPopup} // ✅ ye pehle missing tha
+          className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold transition-colors inline-flex items-center gap-2"
+        >
           Book Free Consultation
           <ArrowRight size={18} />
         </button>

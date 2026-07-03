@@ -15,7 +15,6 @@ const patientQuerySchema = new mongoose.Schema({
   },
   patientMessage: {
     type: String,
-    required: [true, "Patient message is required"],
     minlength: 10,
     maxlength: 500,
   },

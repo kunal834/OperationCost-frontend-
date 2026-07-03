@@ -22,7 +22,7 @@ function App() {
         <Route path="/doctors/:id" element={<DoctorDetail />} />
 
         <Route path="/contact" element={<Contact />} />
-        <Route path="/treatments" element={<Treatments />} />
+        <Route path="/treatment/" element={<TreatmentDetails />} />
         <Route path="/treatment/:id" element={<TreatmentDetails />} />
 
         {/* admin routes */}
