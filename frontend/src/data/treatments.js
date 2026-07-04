@@ -16,28 +16,28 @@ const treatments = [
     image: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb",
   },
   {
-    id: "acl-reconstruction",
-    title: "ACL Reconstruction",
+    id: "acl-tear",
+    title: "Acl Tear",
     image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907",
   },
   {
-    id: "sports-injury",
-    title: "Sports Injury Treatment",
+    id: "meniscus-tear",
+    title: "Meniscus Tear",
     image: "https://images.unsplash.com/photo-1518611012118-696072aa579a",
   },
   {
-    id: "fracture-care",
-    title: "Fracture Care",
+    id: "shoulder-dislocation",
+    title: "Shoulder Dislocation",
     image: "https://images.unsplash.com/photo-1666214280557-f1b5022eb634",
   },
   {
-    id: "arthritis",
-    title: "Arthritis Treatment",
+    id: "arthroscopy",
+    title: "Arthroscopy Surgery",
     image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118",
   },
   {
-    id: "joint-replacement",
-    title: "Joint Replacement",
+    id: "total-knee-replacement",
+    title: "Total Knee Replacement",
     image: "https://images.unsplash.com/photo-1584515933487-779824d29309",
   },
 ];

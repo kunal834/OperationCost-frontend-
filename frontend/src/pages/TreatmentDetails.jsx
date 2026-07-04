@@ -250,7 +250,10 @@ const TreatmentDetails = () => {
               personalized treatment plan.
             </p>
 
-            <button className="mt-8 w-full cursor-pointer rounded-xl bg-white py-4 font-semibold text-sky-700 transition hover:bg-slate-100">
+            <button
+              onClick={() => openPopup()}
+              className="mt-8 w-full cursor-pointer rounded-xl bg-white py-4 font-semibold text-sky-700 transition hover:bg-slate-100"
+            >
               Schedule Consultation
             </button>
 
@@ -507,7 +510,7 @@ const TreatmentDetails = () => {
                   {treatment.surgicalTreatment}
                 </p>
 
-                <button  className="mt-10 rounded-xl bg-white px-8 py-4 font-semibold text-cyan-700 transition hover:bg-slate-100">
+                <button className="mt-10 rounded-xl bg-white px-8 py-4 font-semibold text-cyan-700 transition hover:bg-slate-100">
                   <a href="tel:+88828 92502">Call Now</a>
                 </button>
               </div>
