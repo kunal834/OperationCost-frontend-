@@ -1,11 +1,16 @@
+import image from "../../assets/treatments/arthroscopy-surgery.png";
+
 const arthroscopy = {
   arthroscopy: {
     title: "Arthroscopy Surgery",
 
-    image: "/TreatmentImages/Arthroscpy Surgery.png",
+    image,
 
     heroDescription:
       "Arthroscopy is a minimally invasive orthopedic procedure used to diagnose and treat joint problems with smaller incisions, less pain, faster recovery, and excellent clinical outcomes.",
+
+    metaDescription:
+      "Arthroscopy surgery cost in India for knee, shoulder & joint conditions. Minimally invasive diagnosis and treatment — compare surgeons for free.",
 
     overview:
       "Arthroscopy is a modern surgical technique in which an orthopedic surgeon inserts a tiny camera called an arthroscope into a joint through a small incision. It is commonly performed on the knee, shoulder, hip, ankle, elbow, and wrist to diagnose and treat ligament injuries, cartilage damage, meniscus tears, loose bodies, and other joint disorders.",

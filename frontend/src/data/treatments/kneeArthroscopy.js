@@ -1,11 +1,16 @@
+import image from "../../assets/treatments/knee-arthroscopy.png";
+
 const kneeArthroscopy = {
   "knee-arthroscopy": {
     title: "Knee Arthroscopy Surgery",
 
-    image: "/TreatmentImages/kneeArthroscopy.png",
+    image,
 
     heroDescription:
       "Knee Arthroscopy is a minimally invasive procedure used to diagnose and treat various knee conditions with smaller incisions, faster recovery, less pain, and improved joint function.",
+
+    metaDescription:
+      "Knee arthroscopy surgery cost in India for meniscus tears, ACL injuries & cartilage damage. Compare orthopedic surgeons and book a free consult.",
 
     overview:
       "Knee arthroscopy is one of the most commonly performed orthopedic procedures. Using a tiny camera (arthroscope) inserted through small incisions, surgeons can diagnose and treat conditions such as meniscus tears, ligament injuries, cartilage damage, loose bone fragments, and joint inflammation without the need for large surgical cuts.",

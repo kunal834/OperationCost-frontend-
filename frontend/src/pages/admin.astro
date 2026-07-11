@@ -1,0 +1,23 @@
+---
+import "../styles/global.css";
+import Seo from "../components/Seo.astro";
+import AdminDashboard from "../components/AdminDashboard.jsx";
+
+const seo = {
+  title: "Admin | OperationCost",
+  description: "Internal admin dashboard.",
+  canonicalPath: "/admin",
+  noindex: true,
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <Seo {...seo} />
+  </head>
+  <body>
+    <AdminDashboard client:only="react" />
+  </body>
+</html>

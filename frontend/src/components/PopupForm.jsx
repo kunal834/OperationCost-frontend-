@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useStore } from "@nanostores/react";
 import axios from "axios";
 import { BASE_URL } from "../config/url";
+import { popupOpen, closePopup, scheduleAutoOpen } from "../stores/popup";
 
 import {
   X,
@@ -10,7 +12,6 @@ import {
   Loader2,
   CheckCircle2,
 } from "lucide-react";
-import { usePopup } from "../context/PopupContext";
 
 const treatments = [
   "Knee Replacement",
@@ -23,7 +24,7 @@ const treatments = [
 ];
 
 const PopupForm = () => {
-  const { showPopup, closePopup } = usePopup();
+  const showPopup = useStore(popupOpen);
   const [formData, setFormData] = useState({
     patientName: "",
     phoneNumber: "",
@@ -33,13 +34,9 @@ const PopupForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     closePopup(true);
-  //   }, 3000);
-
-  //   return () => clearTimeout(timer);
-  // }, []);
+  useEffect(() => {
+    return scheduleAutoOpen();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,7 +65,7 @@ const PopupForm = () => {
 
     setIsSubmitting(true);
     try {
-      const response = await axios.post(
+      await axios.post(
         `${BASE_URL}/api/appointments/createAppointment`,
         formData,
       );
@@ -77,7 +74,7 @@ const PopupForm = () => {
       setTimeout(() => {
         setFormData({ patientName: "", phoneNumber: "", treatment: "" });
         setIsSuccess(false);
-        closePopup(true);
+        closePopup();
       }, 1500);
     } catch (error) {
       console.log(error);

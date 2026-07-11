@@ -1,116 +1,4 @@
-// export const doctors = [
-//   {
-//     id: 1,
-//     name: "Dr. Rajesh Sharma",
-//     speciality: "Senior Orthopedic Surgeon",
-//     qualification: "MS Ortho, Fellowship Joint Replacement",
-//     experience: "15+ Years Experience",
-//     rating: 4.9,
-//     reviews: 320,
-//     available: true,
-//     image:
-//       "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80&auto=format&fit=crop",
-//   },
-//   {
-//     id: 2,
-//     name: "Dr. Amit Verma",
-//     speciality: "Joint Replacement Specialist",
-//     qualification: "MBBS, MS Ortho",
-//     experience: "12+ Years Experience",
-//     rating: 4.8,
-//     reviews: 210,
-//     available: true,
-//     image:
-//       "https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=600&q=80&auto=format&fit=crop",
-//   },
-//   {
-//     id: 3,
-//     name: "Dr. Priya Mehta",
-//     speciality: "Sports Injury Specialist",
-//     qualification: "MS Ortho, Diploma Sports Medicine",
-//     experience: "10+ Years Experience",
-//     rating: 4.9,
-//     reviews: 275,
-//     available: false,
-//     image:
-//       "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80&auto=format&fit=crop",
-//   },
-//   {
-//     id: 4,
-//     name: "Dr. Neha Kapoor",
-//     speciality: "Spine Surgeon",
-//     qualification: "MS Ortho, Spine Fellowship",
-//     experience: "11+ Years Experience",
-//     rating: 4.7,
-//     reviews: 189,
-//     available: true,
-//     image:
-//       "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80&auto=format&fit=crop",
-//   },
-//   {
-//     id: 5,
-//     name: "Dr. Vikram Singh",
-//     speciality: "Trauma Specialist",
-//     qualification: "MBBS, MS Ortho, Trauma Care",
-//     experience: "14+ Years Experience",
-//     rating: 4.8,
-//     reviews: 240,
-//     available: true,
-//     image:
-//       "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80&auto=format&fit=crop",
-//   },
-//   {
-//     id: 6,
-//     name: "Dr. Anjali Verma",
-//     speciality: "Joint Replacement Expert",
-//     qualification: "MS Ortho, Fellowship Arthroplasty",
-//     experience: "9+ Years Experience",
-//     rating: 4.6,
-//     reviews: 156,
-//     available: true,
-//     image:
-//       "https://images.unsplash.com/photo-1659353888906-adb3e0041693?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0",
-//   },
-//   {
-//     id: 7,
-//     name: "Dr. Karan Malhotra",
-//     speciality: "Pediatric Orthopedic Surgeon",
-//     qualification: "MS Ortho, Fellowship Pediatric Ortho",
-//     experience: "13+ Years Experience",
-//     rating: 4.9,
-//     reviews: 198,
-//     available: true,
-//     image:
-//       "https://images.unsplash.com/photo-1622902046580-2b47f47f5471?w=600&q=80&auto=format&fit=crop",
-//   },
-//   {
-//     id: 8,
-//     name: "Dr. Simran Kaur",
-//     speciality: "Arthritis & Rheumatology",
-//     qualification: "MD, DM Rheumatology",
-//     experience: "8+ Years Experience",
-//     rating: 4.7,
-//     reviews: 142,
-//     available: false,
-//     image:
-//       "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//   },
-//   {
-//     id: 9,
-//     name: "Dr. Arjun Reddy",
-//     speciality: "ACL & Sports Reconstruction",
-//     qualification: "MS Ortho, Diploma Sports Surgery",
-//     experience: "10+ Years Experience",
-//     rating: 4.8,
-//     reviews: 176,
-//     available: true,
-//     image:
-//       "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&q=80&auto=format&fit=crop",
-//   },
-// ];
-
-
-// doctors data
+import dr1Image from "../assets/doctors/dr-shekh-mohammed-khan.webp";
 
 export const doctors = [
   {
@@ -122,7 +10,7 @@ export const doctors = [
     rating: 4.9,
     reviews: 78, // Update if using verified review source
     available: true,
-    image: "/DoctorsImages/doctor1.webp",
+    image: dr1Image,
 
     about:
       "Dr. Shekh Mohammed Khan is an Orthopedic & Joint Replacement Surgeon specializing in knee, hip replacement, arthroscopy, sports injuries, and trauma care. He is known for advanced orthopedic treatments and robotic-assisted joint replacement surgeries.",

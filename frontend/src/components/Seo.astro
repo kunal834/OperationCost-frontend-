@@ -1,0 +1,55 @@
+---
+// Single reusable <head> metadata + JSON-LD component.
+// Every page passes a `seo` object; canonical/OG url are always derived from
+// astro.config.mjs's `site` so there is exactly one source of truth for the domain.
+const {
+  title,
+  description,
+  canonicalPath = Astro.url.pathname,
+  ogType = "website",
+  ogImage,
+  ogImageAlt,
+  noindex = false,
+  jsonLd,
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL(Astro.url.origin);
+const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
+const resolvedOgImage = ogImage
+  ? new URL(ogImage, siteUrl).toString()
+  : new URL("/og-default.jpg", siteUrl).toString();
+
+const jsonLdList = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+
+{
+  noindex ? (
+    <meta name="robots" content="noindex, nofollow" />
+  ) : (
+    <meta name="robots" content="index, follow" />
+  )
+}
+
+<meta property="og:type" content={ogType} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={resolvedOgImage} />
+{ogImageAlt && <meta property="og:image:alt" content={ogImageAlt} />}
+<meta property="og:locale" content="en_IN" />
+<meta property="og:site_name" content="OperationCost" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={resolvedOgImage} />
+
+{
+  jsonLdList.map((entry) => (
+    <script type="application/ld+json" set:html={JSON.stringify(entry)} />
+  ))
+}

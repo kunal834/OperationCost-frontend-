@@ -1,11 +1,16 @@
+import image from "../../assets/treatments/shoulder-replacement.png";
+
 const shoulderReplacement = {
   "shoulder-replacement": {
     title: "Shoulder Replacement Surgery",
 
-    image: "/TreatmentImages/shoulderReplacement.png",
+    image,
 
     heroDescription:
       "Shoulder Replacement Surgery relieves chronic shoulder pain, restores joint function, and helps patients regain strength and mobility using advanced joint replacement techniques.",
+
+    metaDescription:
+      "Shoulder replacement surgery cost (₹2.5L–₹6L) in India, recovery timeline & implant types. Compare top orthopedic joint replacement surgeons.",
 
     overview:
       "Shoulder replacement surgery is performed when the shoulder joint is severely damaged due to arthritis, fractures, or degenerative conditions. During the procedure, the damaged portions of the shoulder joint are replaced with artificial implants to reduce pain and improve movement.",

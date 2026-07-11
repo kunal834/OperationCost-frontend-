@@ -1,0 +1,136 @@
+---
+import { Phone, Mail, MapPin } from "lucide-react";
+import treatmentDetails from "../data/treatments/index.js";
+
+const quickLinks = [
+  { label: "Home", path: "/" },
+  { label: "About Us", path: "/about" },
+  { label: "Doctors", path: "/doctors" },
+  { label: "Treatments", path: "/treatments" },
+  { label: "Contact", path: "/contact" },
+];
+
+// First 6 treatments as a representative footer sample; the full list lives
+// on the /treatments hub page.
+const treatmentLinks = Object.entries(treatmentDetails)
+  .slice(0, 6)
+  .map(([slug, t]) => ({ slug, title: t.title }));
+
+// TODO: these still point at "#" placeholders (carried over from the SPA) —
+// wire up real profile URLs, then also add them as Organization.sameAs in
+// src/lib/schema.js.
+const socialLinks = [
+  {
+    label: "Facebook",
+    href: "#",
+    bg: "bg-blue-600 hover:bg-blue-700",
+    path: "M13.5 9H15V6.5h-1.5C11.6 6.5 10 8.1 10 10.2V12H8v2.5h2V21h2.5v-6.5H15l.5-2.5h-3v-1.6c0-.6.4-1.4 1-1.4Z",
+  },
+  {
+    label: "Instagram",
+    href: "#",
+    bg: "bg-pink-600 hover:bg-pink-700",
+    path: "M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm0 5.8a2.3 2.3 0 1 1 0-4.6 2.3 2.3 0 0 1 0 4.6ZM16 5H8a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3Zm1.8 11a1.8 1.8 0 0 1-1.8 1.8H8A1.8 1.8 0 0 1 6.2 16V8A1.8 1.8 0 0 1 8 6.2h8A1.8 1.8 0 0 1 17.8 8v8ZM16.4 7.6a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6Z",
+  },
+  {
+    label: "LinkedIn",
+    href: "#",
+    bg: "bg-blue-500 hover:bg-blue-600",
+    path: "M6.9 8.5H4.2V19H6.9V8.5ZM5.6 4A1.6 1.6 0 1 0 5.6 7.2 1.6 1.6 0 0 0 5.6 4ZM19.8 12.9c0-2.6-1.4-3.9-3.3-3.9-1.5 0-2.2.8-2.6 1.4V8.5H11.2c0 .7 0 9.9 0 10.5H13.9v-5.9c0-.3 0-.6.1-.8.3-.7.9-1.4 2-1.4 1.4 0 2 1.1 2 2.6v5.5h2.7v-5.8Z",
+  },
+  {
+    label: "YouTube",
+    href: "#",
+    bg: "bg-red-600 hover:bg-red-700",
+    path: "M21.6 8.4a2.7 2.7 0 0 0-1.9-1.9C18 6 12 6 12 6s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9C2 10.1 2 12 2 12s0 1.9.4 3.6a2.7 2.7 0 0 0 1.9 1.9C6 18 12 18 12 18s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9C22 13.9 22 12 22 12s0-1.9-.4-3.6ZM10 15V9l5.2 3-5.2 3Z",
+  },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-slate-900 text-white pt-12 sm:pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-blue-400">OperationCost</h2>
+        <p class="text-gray-300 mt-4 sm:mt-5 leading-7 text-sm sm:text-base">
+          India's trusted healthcare platform providing advanced orthopedic
+          treatments with complete patient care support.
+        </p>
+        <div class="flex gap-3 sm:gap-4 mt-5 sm:mt-6">
+          {
+            socialLinks.map(({ label, href, bg, path }) => (
+              <a
+                href={href}
+                class={`${bg} p-2.5 sm:p-3 rounded-full transition-colors text-white`}
+                aria-label={label}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d={path} />
+                </svg>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Quick Links</h3>
+        <ul class="space-y-3 sm:space-y-4 text-gray-300 text-sm sm:text-base">
+          {
+            quickLinks.map((link) => (
+              <li>
+                <a href={link.path} class="hover:text-blue-400 transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Treatments</h3>
+        <ul class="space-y-3 sm:space-y-4 text-gray-300 text-sm sm:text-base">
+          {
+            treatmentLinks.map((t) => (
+              <li>
+                <a
+                  href={`/treatments/${t.slug}`}
+                  class="hover:text-blue-400 transition-colors"
+                >
+                  {t.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Contact Info</h3>
+        <div class="space-y-4 sm:space-y-5 text-gray-300 text-sm sm:text-base">
+          <div class="flex gap-3">
+            <Phone className="text-blue-400 shrink-0" size={20} />
+            <span>+91 8882892502</span>
+          </div>
+          <div class="flex gap-3">
+            <Mail className="text-blue-400 shrink-0" size={20} />
+            <span class="break-all">singhraj88828@gmail.com</span>
+          </div>
+          <div class="flex gap-3">
+            <MapPin className="text-blue-400 shrink-0" size={20} />
+            <span>D-17/4 GF, DLF Phase 4, Gurgaon, Haryana - 122002</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="border-t border-gray-700 mt-10 sm:mt-12 pt-6 sm:pt-8 text-center text-gray-400 text-xs sm:text-sm"
+    >
+      © {year} OperationCost. All Rights Reserved.
+    </div>
+  </div>
+</footer>

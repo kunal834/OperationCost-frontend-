@@ -1,11 +1,16 @@
+import image from "../../assets/treatments/meniscus-tear.png";
+
 const meniscusTear = {
   "meniscus-tear": {
     title: "Meniscus Tear Treatment",
 
-    image: "/TreatmentImages/meniscustear.png",
+    image,
 
     heroDescription:
       "Meniscus Tear Treatment helps relieve knee pain, restore movement, and improve joint stability through advanced rehabilitation or minimally invasive arthroscopic surgery.",
+
+    metaDescription:
+      "Meniscus tear treatment cost & recovery in India — non-surgical care vs arthroscopic repair. Compare orthopedic surgeons and book a free consultation.",
 
     overview:
       "A meniscus tear is one of the most common knee injuries, affecting the cartilage that cushions the knee joint. Treatment depends on the type and severity of the tear and may include physiotherapy or arthroscopic repair.",

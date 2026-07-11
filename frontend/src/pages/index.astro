@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import TreatmentsSection from "../components/TreatmentsSection.astro";
+import WhyChooseUs from "../components/WhyChooseUs.astro";
+import DoctorSection from "../components/DoctorSection.astro";
+import Testimonials from "../components/Testimonials.astro";
+import InsurancePartners from "../components/InsurancePartners.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import FAQHome, { faqs } from "../components/FAQHome.astro";
+import { organizationSchema, faqPageSchema } from "../lib/schema.js";
+
+const seo = {
+  title: "OperationCost | Compare Orthopedic Treatment Costs & Top Surgeons in India",
+  description:
+    "Compare orthopedic treatment costs, connect with experienced surgeons, and book a free consultation for knee, hip, spine and sports injury care in India.",
+  canonicalPath: "/",
+  jsonLd: [organizationSchema(Astro.site), faqPageSchema(faqs)],
+};
+---
+
+<Layout seo={seo}>
+  <HeroSection />
+  <TreatmentsSection />
+  <WhyChooseUs />
+  <DoctorSection />
+  <Testimonials />
+  <InsurancePartners />
+  <HowItWorks />
+  <FAQHome />
+</Layout>

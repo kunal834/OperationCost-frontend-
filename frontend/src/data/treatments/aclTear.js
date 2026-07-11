@@ -1,11 +1,16 @@
+import image from "../../assets/treatments/acl-tear.png";
+
 const aclTear = {
   "acl-tear": {
     title: "ACL Tear Treatment",
 
-    image: "/TreatmentImages/acl_tear.png",
+    image,
 
     heroDescription:
       "ACL Tear Treatment helps restore knee stability, reduce pain, and safely return patients to sports and daily activities through advanced rehabilitation or minimally invasive surgery.",
+
+    metaDescription:
+      "ACL tear treatment cost in India, from physiotherapy to arthroscopic reconstruction. Learn symptoms, recovery time & book a free sports injury consult.",
 
     overview:
       "An ACL (Anterior Cruciate Ligament) tear is a common knee injury caused by sudden twisting, landing, or sports activities. Depending on the severity, treatment may include physiotherapy or arthroscopic ACL reconstruction surgery.",

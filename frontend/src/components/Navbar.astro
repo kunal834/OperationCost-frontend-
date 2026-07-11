@@ -1,0 +1,232 @@
+---
+import { ChevronDown, Menu, X } from "lucide-react";
+import treatmentDetails from "../data/treatments/index.js";
+
+const treatmentLinks = Object.entries(treatmentDetails).map(([slug, t]) => ({
+  slug,
+  title: t.title,
+}));
+
+const navLinks = [
+  { label: "Home", path: "/" },
+  { label: "Doctors", path: "/doctors" },
+  { label: "About", path: "/about" },
+  { label: "Contact", path: "/contact" },
+];
+
+const currentPath = Astro.url.pathname;
+const isActive = (path) =>
+  path === "/" ? currentPath === "/" : currentPath.startsWith(path);
+---
+
+<nav
+  class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100"
+>
+  <div
+    class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4"
+  >
+    <a href="/" class="flex items-center gap-3 shrink-0">
+      <div class="leading-none">
+        <p class="font-bold text-lg sm:text-xl lg:text-3xl">
+          <span class="text-blue-600">Operation</span>{" "}
+          <span class="text-cyan-500">Cost</span>
+        </p>
+        <p
+          class="hidden lg:block text-[11px] tracking-[0.35em] uppercase text-gray-500 mt-1"
+        >
+          Compare • Choose • Care
+        </p>
+      </div>
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden lg:flex items-center gap-7">
+      <a
+        href="/"
+        class:list={[
+          "group relative py-2 text-sm lg:text-base transition-colors duration-200",
+          isActive("/")
+            ? "text-blue-600 font-medium"
+            : "text-gray-700 hover:text-blue-600",
+        ]}
+      >
+        Home
+        <span
+          class:list={[
+            "absolute left-0 -bottom-0.5 h-[2px] bg-blue-600 transition-all duration-300",
+            isActive("/") ? "w-full" : "w-0 group-hover:w-full",
+          ]}
+        />
+      </a>
+
+      <!-- Treatments Dropdown (CSS-only, no JS) -->
+      <div class="relative group py-2">
+        <button
+          class="flex items-center gap-1 text-gray-700 hover:text-blue-600 transition"
+        >
+          Treatments
+          <ChevronDown
+            size={16}
+            className="transition-transform duration-300 group-hover:rotate-180"
+          />
+        </button>
+        <span
+          class="absolute left-0 -bottom-0.5 h-[2px] bg-blue-600 w-0 group-hover:w-full transition-all duration-300"
+        />
+        <div
+          class="absolute left-0 top-full pt-2 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200"
+        >
+          <div
+            class="w-64 rounded-xl bg-white shadow-xl ring-1 ring-black/5 py-2 max-h-[70vh] overflow-y-auto"
+          >
+            {
+              treatmentLinks.map((t) => (
+                <a
+                  href={`/treatments/${t.slug}`}
+                  class="block px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition"
+                >
+                  {t.title}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      {
+        navLinks.slice(1).map((link) => (
+          <a
+            href={link.path}
+            class:list={[
+              "group relative py-2 text-sm lg:text-base transition-colors duration-200",
+              isActive(link.path)
+                ? "text-blue-600 font-medium"
+                : "text-gray-700 hover:text-blue-600",
+            ]}
+          >
+            {link.label}
+            <span
+              class:list={[
+                "absolute left-0 -bottom-0.5 h-[2px] bg-blue-600 transition-all duration-300",
+                isActive(link.path) ? "w-full" : "w-0 group-hover:w-full",
+              ]}
+            />
+          </a>
+        ))
+      }
+
+      <button
+        data-open-popup
+        class="bg-blue-600 text-white text-sm lg:text-base px-5 py-3 rounded-xl hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+      >
+        Book Appointment
+      </button>
+    </div>
+
+    <!-- Mobile menu button -->
+    <button
+      id="mobile-menu-toggle"
+      class="lg:hidden text-gray-700 hover:text-blue-600 transition-colors"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <Menu size={28} className="mobile-menu-icon-open" />
+      <X size={28} className="mobile-menu-icon-close hidden" />
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out">
+    <div class="px-6 pb-6 flex flex-col gap-1 border-t border-gray-100 bg-white">
+      <a
+        href="/"
+        class="py-3 text-gray-700 hover:text-blue-600 transition-colors border-b border-gray-100"
+      >
+        Home
+      </a>
+
+      <button
+        id="mobile-treatments-toggle"
+        class="flex items-center justify-between py-3 text-gray-700 hover:text-blue-600 transition-colors border-b border-gray-100"
+        aria-expanded="false"
+      >
+        Treatments
+        <ChevronDown size={18} id="mobile-treatments-chevron" className="transition-transform duration-300" />
+      </button>
+
+      <div id="mobile-treatments-panel" class="overflow-hidden max-h-0 transition-all duration-300">
+        <div class="flex flex-col pl-4">
+          {
+            treatmentLinks.map((t) => (
+              <a
+                href={`/treatments/${t.slug}`}
+                class="py-2.5 text-sm text-gray-600 hover:text-blue-600 transition-colors"
+              >
+                {t.title}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      {
+        navLinks.slice(1).map((link) => (
+          <a
+            href={link.path}
+            class="py-3 text-gray-700 hover:text-blue-600 transition-colors border-b border-gray-100"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+
+      <button
+        data-open-popup
+        class="mt-5 w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 transition-all duration-200 cursor-pointer"
+      >
+        Book Appointment
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const toggleBtn = document.getElementById("mobile-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const openIcon = toggleBtn?.querySelector(".mobile-menu-icon-open");
+  const closeIcon = toggleBtn?.querySelector(".mobile-menu-icon-close");
+
+  let mobileOpen = false;
+
+  const setMobileOpen = (open) => {
+    mobileOpen = open;
+    if (!menu || !toggleBtn) return;
+    menu.classList.toggle("max-h-[85vh]", open);
+    menu.classList.toggle("opacity-100", open);
+    menu.classList.toggle("max-h-0", !open);
+    menu.classList.toggle("opacity-0", !open);
+    toggleBtn.setAttribute("aria-expanded", String(open));
+    openIcon?.classList.toggle("hidden", open);
+    closeIcon?.classList.toggle("hidden", !open);
+  };
+
+  toggleBtn?.addEventListener("click", () => setMobileOpen(!mobileOpen));
+
+  const treatmentsToggle = document.getElementById("mobile-treatments-toggle");
+  const treatmentsPanel = document.getElementById("mobile-treatments-panel");
+  const treatmentsChevron = document.getElementById("mobile-treatments-chevron");
+  let treatmentsOpen = false;
+
+  treatmentsToggle?.addEventListener("click", () => {
+    treatmentsOpen = !treatmentsOpen;
+    treatmentsPanel?.classList.toggle("max-h-[500px]", treatmentsOpen);
+    treatmentsPanel?.classList.toggle("max-h-0", !treatmentsOpen);
+    treatmentsToggle.setAttribute("aria-expanded", String(treatmentsOpen));
+    treatmentsChevron?.classList.toggle("rotate-180", treatmentsOpen);
+  });
+
+  // Close the mobile menu after any in-menu link click.
+  menu?.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => setMobileOpen(false)),
+  );
+</script>

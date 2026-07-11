@@ -1,11 +1,16 @@
+import image from "../../assets/treatments/shoulder-dislocation.png";
+
 const shoulderDislocation = {
   "shoulder-dislocation": {
     title: "Shoulder Dislocation Treatment",
 
-    image: "/TreatmentImages/soldierDislocation.png",
+    image,
 
     heroDescription:
       "Shoulder Dislocation Treatment restores shoulder stability, relieves pain, and helps patients safely return to daily activities, work, and sports through advanced orthopedic care.",
+
+    metaDescription:
+      "Shoulder dislocation treatment cost & recovery in India — from closed reduction to arthroscopic stabilization surgery. Book a free consultation.",
 
     overview:
       "A shoulder dislocation occurs when the upper arm bone (humerus) comes out of the shoulder socket due to trauma, falls, sports injuries, or accidents. Depending on the severity, treatment may involve closed reduction, immobilization, physiotherapy, or arthroscopic surgery to repair damaged ligaments and prevent recurrent dislocations.",

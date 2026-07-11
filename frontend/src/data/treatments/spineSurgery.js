@@ -1,11 +1,16 @@
+import image from "../../assets/treatments/spine-surgery.png";
+
 const spineSurgery = {
   "spine-surgery": {
     title: "Spine Surgery",
 
-    image: "/TreatmentImages/spinesurgery.png",
+    image,
 
     heroDescription:
       "Spine Surgery helps relieve chronic back or neck pain, restore mobility, and improve quality of life through advanced minimally invasive and open surgical techniques.",
+
+    metaDescription:
+      "Spine surgery cost in India for herniated discs, spinal stenosis & fractures. Compare minimally invasive options and top spine surgeons for free.",
 
     overview:
       "Spine surgery is recommended for patients suffering from severe back or neck pain caused by spinal disorders that do not improve with medications, physiotherapy, or lifestyle changes. Depending on the condition, minimally invasive or traditional surgery may be performed to relieve pressure on nerves and stabilize the spine.",

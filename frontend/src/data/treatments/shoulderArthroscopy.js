@@ -1,11 +1,16 @@
+import image from "../../assets/treatments/shoulder-arthroscopy.png";
+
 const shoulderArthroscopy = {
   "shoulder-arthroscopy": {
     title: "Shoulder Arthroscopy Surgery",
 
-    image: "/TreatmentImages/shoulderArthroscopy.png",
+    image,
 
     heroDescription:
       "Shoulder Arthroscopy is a minimally invasive procedure used to diagnose and treat shoulder conditions through tiny incisions, providing less pain, faster recovery, and improved shoulder function.",
+
+    metaDescription:
+      "Shoulder arthroscopy surgery cost in India for rotator cuff tears, labral repair & frozen shoulder. Compare specialists and book a free consult.",
 
     overview:
       "Shoulder arthroscopy is an advanced orthopedic procedure performed using a small camera called an arthroscope. It allows surgeons to diagnose and treat various shoulder disorders such as rotator cuff tears, shoulder instability, labral tears, impingement syndrome, frozen shoulder, and damaged cartilage with minimal tissue disruption.",

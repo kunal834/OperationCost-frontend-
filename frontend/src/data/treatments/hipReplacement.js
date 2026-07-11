@@ -1,11 +1,16 @@
+import image from "../../assets/treatments/hip-replacement.png";
+
 const hipReplacement = {
   "hip-replacement": {
     title: "Hip Replacement Surgery",
 
-    image: "/TreatmentImages/hip_replacement.png",
+    image,
 
     heroDescription:
       "Hip Replacement Surgery relieves chronic hip pain by replacing the damaged joint with an artificial implant, helping patients walk comfortably and regain an active lifestyle.",
+
+    metaDescription:
+      "Hip replacement surgery cost (₹2L–₹5L) in India, recovery timeline & implant options. Compare experienced orthopedic surgeons for free.",
 
     overview:
       "Hip replacement is recommended for patients with severe arthritis, fractures, or joint damage that limits everyday activities. The damaged hip joint is replaced with a durable artificial implant to restore movement and reduce pain.",

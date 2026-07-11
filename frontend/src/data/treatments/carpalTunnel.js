@@ -1,11 +1,16 @@
+import image from "../../assets/treatments/carpal-tunnel-syndrome-treatment.png";
+
 const carpalTunnel = {
   "carpal-tunnel": {
     title: "Carpal Tunnel Syndrome Treatment",
 
-    image: "/TreatmentImages/Carpal Tunnel Syndrome Treatment.png",
+    image,
 
     heroDescription:
       "Carpal Tunnel Syndrome Treatment relieves numbness, tingling, pain, and weakness in the hand by reducing pressure on the median nerve through advanced non-surgical care or minimally invasive surgery.",
+
+    metaDescription:
+      "Carpal tunnel syndrome treatment cost in India — wrist splints to carpal tunnel release surgery. Compare hand surgeons and book a free consultation.",
 
     overview:
       "Carpal Tunnel Syndrome (CTS) is a common condition caused by compression of the median nerve as it passes through the carpal tunnel in the wrist. It often develops gradually due to repetitive hand movements, prolonged computer use, certain medical conditions, or wrist injuries. Early treatment helps prevent permanent nerve damage and restores normal hand function.",

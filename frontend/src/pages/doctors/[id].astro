@@ -1,0 +1,294 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import {
+  Star,
+  CalendarCheck,
+  MapPin,
+  Clock,
+  ShieldCheck,
+  ChevronLeft,
+  ChevronDown,
+  Stethoscope,
+  Languages as LanguagesIcon,
+  Phone,
+  MessageCircle,
+  GraduationCap,
+} from "lucide-react";
+import { doctors } from "../../data/doctors.js";
+import { breadcrumbListSchema, physicianSchema } from "../../lib/schema.js";
+import { truncate } from "../../lib/text.js";
+import { imageSrc } from "../../lib/image.js";
+
+export function getStaticPaths() {
+  return doctors.map((doctor) => ({
+    params: { id: String(doctor.id) },
+    props: { doctor },
+  }));
+}
+
+const { doctor } = Astro.props;
+const CLINIC_PHONE = "918882892502";
+
+const similarDoctors = doctors
+  .filter((d) => d.id !== doctor.id && d.speciality === doctor.speciality)
+  .slice(0, 3);
+
+const whatsappMsg = encodeURIComponent(
+  `Hi, I want to book an appointment with ${doctor.name} Doctor-ID=${doctor.id} Hospital-ID=2 Tier-ID=2`,
+);
+
+const seo = {
+  title: `${doctor.name} – ${doctor.speciality} | OperationCost`,
+  description: truncate(doctor.about),
+  canonicalPath: `/doctors/${doctor.id}`,
+  ogType: "profile",
+  ogImage: imageSrc(doctor.image),
+  jsonLd: [
+    physicianSchema({ doctor, siteUrl: Astro.site }),
+    breadcrumbListSchema(Astro.site, [
+      { name: "Home", path: "/" },
+      { name: "Doctors", path: "/doctors" },
+      { name: doctor.name, path: `/doctors/${doctor.id}` },
+    ]),
+  ],
+};
+---
+
+<Layout seo={seo}>
+  <div class="bg-gray-50 min-h-screen pb-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6">
+      <a
+        href="/doctors"
+        class="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-blue-600 transition-colors"
+      >
+        <ChevronLeft size={16} /> All Doctors
+      </a>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-4">
+      <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-5 sm:p-10 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div class="lg:col-span-1 lg:order-2">
+          <div class="rounded-2xl overflow-hidden bg-gray-100 aspect-[16/10] md:aspect-[4/5] max-h-64 md:max-h-none">
+            <img
+              src={imageSrc(doctor.image)}
+              alt={`${doctor.name}, ${doctor.speciality}`}
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="600"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div class="mt-3 flex items-center justify-between bg-gray-50 rounded-xl px-4 py-2.5 text-sm">
+            <span class="text-gray-500">Consultation Fee</span>
+            <span class="font-bold text-gray-900">₹{doctor.fee}</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 lg:order-1 min-w-0">
+          <div class="flex items-center gap-2 flex-wrap">
+            <h1 class="text-xl sm:text-3xl font-bold text-gray-900 wrap-words">{doctor.name}</h1>
+            <ShieldCheck size={20} className="text-blue-500 fill-blue-100 shrink-0" />
+          </div>
+          <p class="text-gray-600 mt-2 text-sm sm:text-base">
+            {doctor.speciality}
+            {doctor.location?.address && ` in ${doctor.location.address}`}
+          </p>
+          <p class="text-gray-500 mt-1 text-sm">{doctor.qualification}</p>
+
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mt-5">
+            <div class="flex items-center gap-2">
+              <span class="bg-purple-50 text-purple-600 p-1.5 rounded-lg">
+                <Stethoscope size={16} />
+              </span>
+              <p class="font-bold text-gray-900 text-sm">{doctor.experience}</p>
+            </div>
+            <div class="h-8 w-px bg-gray-200 hidden sm:block" />
+            <div class="flex items-center gap-2">
+              <span class="bg-green-50 text-green-600 p-1.5 rounded-lg">
+                <Star size={16} className="fill-green-600" />
+              </span>
+              <div>
+                <p class="font-bold text-gray-900 text-sm leading-tight">{doctor.rating} Rating</p>
+                <p class="text-gray-500 text-xs">({doctor.reviews} reviews)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 bg-amber-50 border border-amber-100 text-amber-800 text-xs sm:text-sm px-4 py-2.5 rounded-xl inline-block">
+            {Math.floor(doctor.reviews / 8)} patients enquired about {doctor.name.split(" ").slice(-1)[0]} in the last hour
+          </div>
+
+          <div class="mt-5 bg-blue-50/60 border border-blue-100 rounded-2xl p-4">
+            <div class="flex items-center justify-between mb-3">
+              <p class="font-semibold text-gray-900 text-sm flex items-center gap-1.5">
+                <Clock size={15} /> Available Timings
+              </p>
+              {
+                doctor.location && (
+                  <span class="text-blue-600 text-sm font-medium flex items-center gap-1">
+                    <MapPin size={14} /> {doctor.location.clinic}
+                  </span>
+                )
+              }
+            </div>
+            <div class="bg-white rounded-xl px-4 py-3 inline-flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+              <span class="font-semibold text-gray-900">{doctor.timings.days}</span>
+              <span class="text-gray-500">{doctor.timings.time}</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3 mt-6">
+            <button
+              data-open-popup
+              disabled={!doctor.available}
+              class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white px-5 sm:px-6 py-3 rounded-xl font-semibold text-sm transition-colors"
+            >
+              <CalendarCheck size={17} />
+              {doctor.available ? "Book Appointment" : "Fully Booked"}
+            </button>
+            <a
+              href={`tel:+${CLINIC_PHONE}`}
+              class="flex items-center gap-2 border border-gray-200 hover:border-blue-600 hover:text-blue-600 text-gray-700 px-5 sm:px-6 py-3 rounded-xl font-semibold text-sm transition-colors"
+            >
+              <Phone size={17} /> Call Clinic
+            </a>
+            <a
+              href={`https://wa.me/${CLINIC_PHONE}?text=${whatsappMsg}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 border border-green-200 text-green-700 hover:bg-green-50 px-5 sm:px-6 py-3 rounded-xl font-semibold text-sm transition-colors"
+            >
+              <MessageCircle size={17} /> WhatsApp
+            </a>
+          </div>
+
+          <p class="text-xs text-gray-400 mt-4 italic">
+            Disclaimer: Consultation fees and timings are indicative and may
+            vary. Please confirm at the time of booking.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-5 sm:p-10 mt-6">
+        <h2 class="text-lg font-bold text-gray-900 mb-3">About {doctor.name}</h2>
+        <p class="text-gray-600 leading-relaxed text-sm sm:text-base">{doctor.about}</p>
+        <div class="flex items-center gap-2 mt-5 text-sm text-gray-600">
+          <LanguagesIcon size={16} className="text-gray-400" /> Speaks {doctor.languages.join(", ")}
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl shadow-sm border border-gray-100 px-5 sm:px-8 mt-6 accordion-group">
+        <details open class="border-b border-gray-100 py-1">
+          <summary class="w-full flex items-center justify-between gap-4 cursor-pointer list-none py-4 sm:py-5">
+            <div class="flex items-center gap-3 min-w-0">
+              <span class="hidden sm:flex items-center justify-center w-9 h-9 rounded-xl bg-blue-50 text-blue-600 shrink-0">
+                <Stethoscope size={18} />
+              </span>
+              <h2 class="text-base sm:text-xl font-bold text-gray-900 truncate">
+                {doctor.name.replace(/^Dr\.?\s*/i, "")}'s Specialities & Expertise
+              </h2>
+            </div>
+            <span class="chevron flex items-center justify-center w-8 h-8 rounded-full bg-gray-50 text-blue-900 shrink-0 transition-transform">
+              <ChevronDown size={18} />
+            </span>
+          </summary>
+          <div class="pb-5 sm:pb-6">
+            <p class="text-sm sm:text-base text-gray-600 mb-4">
+              {doctor.name} performs major interventions in the following specialities:
+            </p>
+            <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+              {
+                doctor.services.map((item) => (
+                  <li class="flex items-start gap-2.5 text-sm sm:text-base text-gray-700">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0" />
+                    {item}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </details>
+
+        <details class="py-1">
+          <summary class="w-full flex items-center justify-between gap-4 cursor-pointer list-none py-4 sm:py-5">
+            <div class="flex items-center gap-3 min-w-0">
+              <span class="hidden sm:flex items-center justify-center w-9 h-9 rounded-xl bg-blue-50 text-blue-600 shrink-0">
+                <GraduationCap size={18} />
+              </span>
+              <h2 class="text-base sm:text-xl font-bold text-gray-900 truncate">Education & Achievements</h2>
+            </div>
+            <span class="chevron flex items-center justify-center w-8 h-8 rounded-full bg-gray-50 text-blue-900 shrink-0 transition-transform">
+              <ChevronDown size={18} />
+            </span>
+          </summary>
+          <div class="pb-5 sm:pb-6">
+            <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+              {
+                doctor.education.map((item) => (
+                  <li class="flex items-start gap-2.5 text-sm sm:text-base text-gray-700">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0" />
+                    {item}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      {
+        doctor.location && (
+          <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-5 sm:p-8 mt-6">
+            <h2 class="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <MapPin size={18} className="text-gray-400" /> Clinic Location
+            </h2>
+            <p class="text-sm font-semibold text-gray-800">{doctor.location.clinic}</p>
+            <p class="text-sm text-gray-500 mt-1">{doctor.location.address}</p>
+          </div>
+        )
+      }
+
+      {
+        similarDoctors.length > 0 && (
+          <div class="mt-10">
+            <h2 class="text-lg font-bold text-gray-900 mb-4">Other {doctor.speciality}s</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {similarDoctors.map((d) => (
+                <a
+                  href={`/doctors/${d.id}`}
+                  class="bg-white rounded-2xl border border-gray-100 p-4 flex items-center gap-3 hover:shadow-md transition-shadow"
+                >
+                  <img
+                    src={imageSrc(d.image)}
+                    alt={d.name}
+                    loading="lazy"
+                    decoding="async"
+                    width="56"
+                    height="56"
+                    class="w-14 h-14 rounded-full object-cover shrink-0"
+                  />
+                  <div class="min-w-0">
+                    <p class="font-semibold text-gray-900 text-sm truncate">{d.name}</p>
+                    <p class="text-xs text-gray-500 flex items-center gap-1">
+                      <Star size={11} className="fill-yellow-500 text-yellow-500" /> {d.rating} · {d.experience.split(" ")[0]}
+                    </p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</Layout>
+
+<style>
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] .chevron {
+    transform: rotate(180deg);
+  }
+</style>

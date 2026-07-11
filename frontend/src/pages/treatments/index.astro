@@ -1,0 +1,49 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import TreatmentCard from "../../components/TreatmentCard.astro";
+import treatmentDetails from "../../data/treatments/index.js";
+import { breadcrumbListSchema } from "../../lib/schema.js";
+
+const treatments = Object.entries(treatmentDetails).map(([slug, t]) => ({
+  slug,
+  title: t.title,
+  image: t.image,
+}));
+
+const seo = {
+  title: "Orthopedic Treatments & Surgery Costs in India | OperationCost",
+  description:
+    "Explore knee, hip, shoulder, spine and sports injury treatments — compare costs, recovery timelines and connect with experienced orthopedic surgeons in India.",
+  canonicalPath: "/treatments",
+  jsonLd: breadcrumbListSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Treatments", path: "/treatments" },
+  ]),
+};
+---
+
+<Layout seo={seo}>
+  <div class="max-w-7xl mx-auto px-6 py-20">
+    <div class="text-center mb-14">
+      <span class="inline-block text-xs font-semibold tracking-wide text-blue-600 bg-blue-100 px-3 py-1 rounded-full mb-4">
+        ALL TREATMENTS
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900">
+        Orthopedic Treatments We Cover
+      </h1>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Compare costs, recovery timelines and treatment options across all our
+        orthopedic and sports injury specialities — then book a free
+        consultation with an experienced surgeon.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        treatments.map((t) => (
+          <TreatmentCard slug={t.slug} title={t.title} image={t.image} />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

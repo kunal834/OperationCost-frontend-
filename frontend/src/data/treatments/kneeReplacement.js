@@ -1,11 +1,16 @@
+import image from "../../assets/treatments/knee-replacement.png";
+
 const kneeReplacement = {
   "knee-replacement": {
     title: "Knee Replacement",
 
-    image: "/TreatmentImages/kneetreatment.png",
+    image,
 
     heroDescription:
       "Knee replacement surgery relieves chronic knee pain by replacing the damaged joint with an artificial implant, helping patients regain mobility and improve daily life.",
+
+    metaDescription:
+      "Compare knee replacement surgery costs (₹1.8L–₹4.5L) in India, recovery timeline & success rates. Connect with experienced orthopedic surgeons for free.",
 
     overview:
       "Knee replacement is recommended for people with severe arthritis or joint damage when medicines and physiotherapy no longer provide relief. The damaged joint is replaced with an artificial implant that restores movement and reduces pain.",

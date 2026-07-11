@@ -1,11 +1,16 @@
+import image from "../../assets/treatments/total-knee-replacement.png";
+
 const totalKneeReplacement = {
   "total-knee-replacement": {
     title: "Total Knee Replacement",
 
-    image: "/TreatmentImages/total knee replacement.png",
+    image,
 
     heroDescription:
       "Total Knee Replacement is an advanced surgical procedure that replaces the damaged knee joint with an artificial implant to relieve pain and restore normal movement.",
+
+    metaDescription:
+      "Total Knee Replacement cost, procedure details & 3–6 month recovery timeline in India. Get matched with top joint replacement surgeons for free.",
 
     overview:
       "Total Knee Replacement (TKR) is recommended for patients with severe knee arthritis or joint damage who no longer benefit from medicines or physiotherapy. The procedure helps improve mobility, reduce pain, and enhance quality of life.",

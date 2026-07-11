@@ -1,0 +1,277 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {
+  Stethoscope,
+  ShieldCheck,
+  HeartPulse,
+  Award,
+  Users,
+  Clock,
+  CheckCircle2,
+  Quote,
+  ArrowRight,
+} from "lucide-react";
+import { doctors } from "../data/doctors.js";
+import { breadcrumbListSchema } from "../lib/schema.js";
+import { imageSrc } from "../lib/image.js";
+
+const stats = [
+  { label: "Surgeries Performed", value: "500+", icon: Stethoscope },
+  { label: "Years of Experience", value: "15+", icon: Award },
+  { label: "Success Rate", value: "98%", icon: HeartPulse },
+  { label: "Support Available", value: "24/7", icon: Clock },
+];
+
+const features = [
+  {
+    icon: Stethoscope,
+    title: "Advanced Technology",
+    desc: "Latest diagnostic and surgical equipment for accurate, minimally invasive treatment.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Experienced Surgeons",
+    desc: "Board-certified orthopedic surgeons with 10+ years of specialized experience.",
+  },
+  {
+    icon: HeartPulse,
+    title: "Personalized Care",
+    desc: "Every treatment plan is tailored to the patient's condition and recovery goals.",
+  },
+  {
+    icon: Award,
+    title: "Affordable Treatment",
+    desc: "Transparent pricing with insurance support and flexible payment options.",
+  },
+];
+
+const testimonials = [
+  {
+    name: "Suresh Kumar",
+    treatment: "Knee Replacement",
+    text: "The care I received was excellent. Dr. Kapoor and his team made my recovery smooth and stress-free.",
+    rating: 5,
+  },
+  {
+    name: "Priya Singh",
+    treatment: "Spine Surgery",
+    text: "Very professional staff and clean facility. I felt confident throughout my treatment journey.",
+    rating: 5,
+  },
+];
+
+const seo = {
+  title: "About Us | OperationCost",
+  description:
+    "Learn about OperationCost's mission to provide affordable, advanced orthopedic care with experienced surgeons and personalized treatment plans.",
+  canonicalPath: "/about",
+  jsonLd: breadcrumbListSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+  ]),
+};
+---
+
+<Layout seo={seo}>
+  <div class="bg-white">
+    <section class="bg-gradient-to-br from-blue-50 via-white to-blue-50/50 py-16 sm:py-20 px-4">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide text-blue-600 bg-blue-100 px-3 py-1.5 rounded-full mb-4">
+            <Users size={14} />
+            ABOUT OPERATIONCOST
+          </span>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+            Trusted Orthopedic Care, <span class="text-blue-600">Built Around You</span>
+          </h1>
+          <p class="text-gray-600 text-base sm:text-lg leading-relaxed">
+            We are committed to providing world-class orthopedic treatment at
+            affordable prices, combining advanced technology with
+            compassionate, personalized care for every patient who walks
+            through our doors.
+          </p>
+          <div class="flex items-center gap-4 mt-6">
+            <button
+              data-open-popup
+              class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors inline-flex items-center gap-2 cursor-pointer"
+            >
+              Book Consultation
+              <ArrowRight size={18} />
+            </button>
+          </div>
+        </div>
+        <div class="rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1681843126728-04eab730febe?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0"
+            alt="OperationCost hospital team"
+            width="1170"
+            height="320"
+            class="w-full h-80 object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class="max-w-6xl mx-auto mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {
+          stats.map(({ label, value, icon: Icon }) => (
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 py-6 text-center hover:shadow-md hover:-translate-y-0.5 transition-all">
+              <Icon size={20} className="text-blue-600 mx-auto mb-2" />
+              <p class="text-2xl sm:text-3xl font-bold text-gray-900">{value}</p>
+              <p class="text-sm text-gray-500 mt-1">{label}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto py-16 sm:py-20 px-4 grid md:grid-cols-2 gap-10 items-center">
+      <div class="rounded-3xl overflow-hidden shadow-xl order-2 md:order-1 ring-1 ring-black/5">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1681966826227-d008a1cfe9c7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0"
+          alt="OperationCost treatment facility"
+          width="1170"
+          height="288"
+          class="w-full h-72 object-cover"
+          loading="lazy"
+        />
+      </div>
+      <div class="order-1 md:order-2">
+        <span class="text-xs font-semibold tracking-wide text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
+          OUR JOURNEY
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-4 mb-4">Our Story</h2>
+        <p class="text-gray-600 leading-relaxed mb-5">
+          What started as a small orthopedic clinic has grown into a trusted
+          center for joint, spine, and sports injury treatment. Our journey
+          has been driven by one simple goal — helping patients move freely
+          and live pain-free.
+        </p>
+        <ul class="space-y-3">
+          {
+            [
+              "Patient-first approach to every treatment",
+              "Continuous investment in modern technology",
+              "A team that treats every patient like family",
+            ].map((point) => (
+              <li class="flex items-start gap-3 text-gray-600">
+                <span class="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center shrink-0 mt-0.5">
+                  <CheckCircle2 size={14} className="text-blue-600" />
+                </span>
+                <span>{point}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="bg-gray-50 py-16 sm:py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="text-xs font-semibold tracking-wide text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
+            OUR SPECIALISTS
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-4">Meet Our Doctors</h2>
+          <p class="text-gray-500 mt-2">Experienced specialists dedicated to your recovery</p>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {
+            doctors.map((doc) => (
+              <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all">
+                <a href={`/doctors/${doc.id}`}>
+                  <img
+                    src={imageSrc(doc.image)}
+                    alt={`${doc.name}, ${doc.speciality}`}
+                    width="400"
+                    height="224"
+                    class="w-full h-56 object-cover bg-gray-100 cursor-pointer"
+                    loading="lazy"
+                  />
+                </a>
+                <div class="p-5">
+                  <h3 class="font-bold text-lg text-gray-900">{doc.name}</h3>
+                  <p class="text-blue-600 text-sm font-medium">{doc.speciality}</p>
+                  <p class="text-gray-500 text-sm mt-1">{doc.qualification}</p>
+                  <p class="text-gray-400 text-xs mt-3 flex items-center gap-1 pt-3 border-t border-gray-100">
+                    <Clock size={14} /> {doc.experience}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto py-16 sm:py-20 px-4">
+      <div class="text-center mb-10">
+        <span class="text-xs font-semibold tracking-wide text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
+          WHY US
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-4">Why Choose Us</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {
+          features.map(({ icon: Icon, title, desc }) => (
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-center hover:shadow-md hover:border-blue-100 transition-all">
+              <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-4">
+                <Icon size={22} className="text-blue-600" />
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2">{title}</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">{desc}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-br from-blue-600 to-blue-700 py-16 sm:py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">What Our Patients Say</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6">
+          {
+            testimonials.map((t) => (
+              <div class="bg-white rounded-3xl p-6 shadow-lg relative">
+                <Quote size={28} className="text-blue-100 absolute top-5 right-5" />
+                <div class="flex items-center gap-1 mb-3">
+                  {Array.from({ length: t.rating }).map(() => (
+                    <span class="text-yellow-400">★</span>
+                  ))}
+                </div>
+                <p class="text-gray-600 leading-relaxed mb-4">{t.text}</p>
+                <div class="flex items-center gap-3 pt-3 border-t border-gray-100">
+                  <div class="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-semibold text-sm">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p class="font-semibold text-gray-900 text-sm">{t.name}</p>
+                    <p class="text-xs text-gray-400">{t.treatment}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 px-4 text-center bg-gradient-to-b from-white to-blue-50/40">
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+        Ready to Start Your Recovery Journey?
+      </h2>
+      <p class="text-gray-500 mb-6">
+        Book a free consultation with our orthopedic experts today.
+      </p>
+      <button
+        data-open-popup
+        class="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold transition-colors inline-flex items-center gap-2"
+      >
+        Book Free Consultation
+        <ArrowRight size={18} />
+      </button>
+    </section>
+  </div>
+</Layout>

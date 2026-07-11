@@ -1,0 +1,136 @@
+---
+import { Image } from "astro:assets";
+import {
+  ShieldCheck,
+  Calendar,
+  Play,
+  Users,
+  ShieldPlus,
+  HeartHandshake,
+  Trophy,
+  PhoneCall,
+} from "lucide-react";
+import heroImage from "../assets/hero/doctor-consultation.png";
+
+const features = [
+  { icon: Users, title: "Expert Surgeons", subtitle: "Highly Experienced" },
+  { icon: ShieldPlus, title: "Advanced Care", subtitle: "Latest Technology" },
+  {
+    icon: HeartHandshake,
+    title: "Complete Support",
+    subtitle: "Every Step of the Way",
+  },
+];
+
+const stats = [
+  { icon: Users, value: "10,000+", label: "Happy Patients" },
+  { icon: Trophy, value: "500+", label: "Successful Surgeries" },
+  { icon: ShieldCheck, value: "50+", label: "Expert Doctors" },
+  { icon: PhoneCall, value: "24/7", label: "Patient Support" },
+];
+---
+
+<section class="relative bg-[#eef4fc] py-12 sm:py-16 lg:py-20 overflow-hidden">
+  <div class="pointer-events-none absolute -top-24 -right-24 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl" />
+  <div class="pointer-events-none absolute bottom-0 -left-24 w-72 h-72 bg-blue-100/60 rounded-full blur-3xl" />
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+    <div>
+      <span class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">
+        <ShieldCheck size={16} /> Trusted Orthopedic Care
+      </span>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-5 sm:mt-6 leading-[1.05] tracking-tight">
+        <span class="text-gray-900">Better Movement.</span>
+        <br />
+        <span class="text-blue-600">Better Life.</span>
+      </h1>
+
+      <p class="text-gray-600 text-base sm:text-lg mt-5 sm:mt-6 max-w-md">
+        Advanced orthopedic treatments with expert surgeons, modern
+        technology & compassionate care.
+      </p>
+
+      <div class="grid grid-cols-3 gap-2 sm:gap-3 mt-6 sm:mt-8">
+        {
+          features.map(({ icon: Icon, title, subtitle }) => (
+            <div class="bg-white/70 backdrop-blur-md rounded-2xl border border-white/60 p-3 sm:p-4 shadow-[0_4px_20px_-4px_rgba(30,64,175,0.12)]">
+              <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-blue-50 text-blue-600 mb-2">
+                <Icon size={18} />
+              </span>
+              <p class="font-semibold text-gray-900 text-xs sm:text-sm leading-tight">{title}</p>
+              <p class="text-gray-500 text-[11px] sm:text-xs mt-0.5">{subtitle}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="flex flex-wrap gap-3 mt-6 sm:mt-8">
+        <button
+          data-open-popup
+          class="cursor-pointer flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base shadow-lg shadow-blue-600/20 transition-colors"
+        >
+          <Calendar size={18} /> Book Free Consultation
+        </button>
+        <a
+          href="/about"
+          class="cursor-pointer flex items-center gap-2 border border-blue-200 bg-white/60 backdrop-blur-sm text-blue-600 hover:bg-blue-50 px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base transition-colors"
+        >
+          <Play size={16} /> How We Help
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-10 pt-6 border-t border-blue-900/10">
+        {
+          stats.map(({ icon: Icon, value, label }) => (
+            <div class="flex items-center gap-2.5">
+              <span class="flex items-center justify-center w-10 h-10 rounded-full bg-white/70 backdrop-blur-sm text-blue-600 shrink-0">
+                <Icon size={17} />
+              </span>
+              <div>
+                <p class="font-bold text-gray-900 text-sm sm:text-base leading-tight">{value}</p>
+                <p class="text-gray-500 text-[11px] sm:text-xs">{label}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="relative h-75 sm:h-100 lg:h-137.5">
+      <Image
+        src={heroImage}
+        alt="Orthopedic doctor consulting a patient"
+        width={800}
+        height={550}
+        loading="eager"
+        fetchpriority="high"
+        class="w-full h-full object-cover rounded-3xl hero-mask"
+      />
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#eef4fc] to-transparent rounded-l-3xl" />
+
+      <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-blue-700/95 backdrop-blur-sm text-white p-4 sm:p-5 rounded-2xl shadow-xl max-w-[80%] sm:max-w-xs flex items-start gap-3">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-white/15 shrink-0">
+          <ShieldCheck size={20} />
+        </span>
+        <div>
+          <p class="font-bold text-sm sm:text-base leading-tight">Safe. Trusted. Proven Care.</p>
+          <p class="text-blue-100 text-xs sm:text-sm mt-1">
+            Your health is our priority. We are with you, every step.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-mask {
+    mask-image:
+      linear-gradient(to right, transparent, black 12%),
+      radial-gradient(ellipse at center, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 12%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+  }
+</style>
