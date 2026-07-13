@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /admin
 
-Sitemap: https://www.example.com/sitemap-index.xml
+Sitemap: https://www.operationcost.com/sitemap-index.xml
