@@ -20,10 +20,12 @@ const isActive = (path) =>
 ---
 
 <nav
-  class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-neutral-100"
+  id="site-navbar"
+  class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-neutral-100 transition-shadow duration-300"
 >
   <div
-    class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4"
+    id="site-navbar-inner"
+    class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4 transition-[padding] duration-300"
   >
     <a href="/" class="group flex items-center gap-3 shrink-0">
       <div class="leading-none">
@@ -228,5 +230,21 @@ const isActive = (path) =>
   // Close the mobile menu after any in-menu link click.
   menu?.querySelectorAll("a").forEach((a) =>
     a.addEventListener("click", () => setMobileOpen(false)),
+  );
+
+  // Compact + elevate the navbar once the page has scrolled past the top.
+  const navbar = document.getElementById("site-navbar");
+  const navbarInner = document.getElementById("site-navbar-inner");
+  const setScrolled = (scrolled) => {
+    navbar?.classList.toggle("shadow-md", scrolled);
+    navbar?.classList.toggle("shadow-sm", !scrolled);
+    navbarInner?.classList.toggle("py-2.5", scrolled);
+    navbarInner?.classList.toggle("py-4", !scrolled);
+  };
+  setScrolled(window.scrollY > 12);
+  window.addEventListener(
+    "scroll",
+    () => setScrolled(window.scrollY > 12),
+    { passive: true },
   );
 </script>

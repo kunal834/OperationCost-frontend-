@@ -6,6 +6,7 @@ import {
   ArrowRight,
   Calendar,
   CheckCircle2,
+  ChevronDown,
   ChevronRight,
   Clock3,
   Hospital,
@@ -541,22 +542,30 @@ const seo = {
           </div>
           <div class="space-y-6">
             {treatment.faq.map((item, index) => (
-              <details
-                class="faq-item overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-colors hover:border-brand-200"
+              <div
+                class="faq-item overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-brand-200 hover:shadow-lg"
                 data-reveal
                 style={`transition-delay: ${index * 50}ms`}
               >
-                <summary class="flex w-full cursor-pointer items-center justify-between p-6 text-left list-none">
+                <button
+                  type="button"
+                  class="faq-trigger flex w-full cursor-pointer items-center justify-between gap-4 p-6 text-left"
+                  aria-expanded="false"
+                  aria-controls={`treatment-faq-panel-${index}`}
+                >
                   <h3 class="text-xl font-semibold text-neutral-900">{item.question}</h3>
-                  <span class="text-3xl shrink-0 pl-4">
-                    <span class="faq-plus">+</span>
-                    <span class="faq-minus hidden">−</span>
-                  </span>
-                </summary>
-                <div class="border-t px-6 py-6">
-                  <p class="leading-8 text-neutral-600">{item.answer}</p>
+                  <div class="chevron flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-600 transition-all duration-300">
+                    <ChevronDown size={18} />
+                  </div>
+                </button>
+                <div id={`treatment-faq-panel-${index}`} class="faq-panel grid" style="grid-template-rows: 0fr">
+                  <div class="overflow-hidden">
+                    <div class="border-t px-6 py-6">
+                      <p class="leading-8 text-neutral-600">{item.answer}</p>
+                    </div>
+                  </div>
                 </div>
-              </details>
+              </div>
             ))}
           </div>
         </section>
@@ -617,13 +626,35 @@ const seo = {
 </Layout>
 
 <style>
-  .faq-item summary::-webkit-details-marker {
-    display: none;
+  .faq-item.is-open {
+    border-color: var(--color-brand-200);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
   }
-  .faq-item[open] .faq-plus {
-    display: none;
+  .faq-item.is-open .chevron {
+    background-color: var(--color-brand-600);
+    color: white;
+    transform: rotate(180deg);
   }
-  .faq-item[open] .faq-minus {
-    display: inline;
+  .faq-panel {
+    transition: grid-template-rows 400ms var(--ease-smooth);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq-panel {
+      transition: none;
+    }
   }
 </style>
+
+<script>
+  document.querySelectorAll(".faq-trigger").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      const panelId = btn.getAttribute("aria-controls");
+      const panel = panelId ? document.getElementById(panelId) : null;
+
+      btn.setAttribute("aria-expanded", String(!expanded));
+      if (panel) panel.style.gridTemplateRows = expanded ? "0fr" : "1fr";
+      btn.closest(".faq-item")?.classList.toggle("is-open", !expanded);
+    });
+  });
+</script>

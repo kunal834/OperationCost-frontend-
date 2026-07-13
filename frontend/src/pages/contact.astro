@@ -2,11 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import ContactForm from "../components/ContactForm.jsx";
 import { breadcrumbListSchema } from "../lib/schema.js";
+import { Phone, Mail, Clock } from "lucide-react";
 
 const contactInfo = [
-  { title: "Phone Number", value: "+91 98765 43210" },
-  { title: "Email Address", value: "care@operationcost.com" },
-  { title: "Opening Hours", value: "Mon - Sat: 9:00 AM - 8:00 PM" },
+  { icon: Phone, title: "Phone Number", value: "+91 98765 43210" },
+  { icon: Mail, title: "Email Address", value: "care@operationcost.com" },
+  { icon: Clock, title: "Opening Hours", value: "Mon - Sat: 9:00 AM - 8:00 PM" },
 ];
 
 const seo = {
@@ -22,8 +23,14 @@ const seo = {
 ---
 
 <Layout seo={seo}>
-  <div class="bg-white">
-    <section class="text-center pt-16 pb-10 px-4" data-reveal>
+  <div class="relative overflow-hidden bg-white">
+    <div class="pointer-events-none absolute -top-32 -right-24 w-96 h-96 bg-brand-100/50 rounded-full blur-3xl animate-soft-float" />
+    <div
+      class="pointer-events-none absolute bottom-0 -left-24 w-72 h-72 bg-accent-100/40 rounded-full blur-3xl animate-soft-float"
+      style="animation-delay: -6s"
+    />
+
+    <section class="relative text-center pt-16 pb-10 px-4" data-reveal>
       <span
         class="inline-block text-xs font-semibold tracking-wide text-brand-600 bg-brand-50 px-3 py-1 rounded-full mb-4"
       >
@@ -36,7 +43,7 @@ const seo = {
       </p>
     </section>
 
-    <section class="max-w-6xl mx-auto px-4 pb-16 grid md:grid-cols-2 gap-8 items-start">
+    <section class="relative max-w-6xl mx-auto px-4 pb-16 grid md:grid-cols-2 gap-8 items-start">
       <div class="bg-white rounded-3xl shadow-sm border border-neutral-100 p-8" data-reveal>
         <h2 class="text-xl font-bold text-neutral-900 mb-2">Contact Information</h2>
         <p class="text-neutral-500 text-sm mb-8 leading-relaxed">
@@ -47,10 +54,14 @@ const seo = {
 
         <div class="space-y-6">
           {
-            contactInfo.map(({ title, value }) => (
-              <div class="flex items-start gap-4">
-                <div class="w-11 h-11 rounded-full bg-brand-50 flex items-center justify-center shrink-0 text-brand-600 font-semibold text-sm">
-                  {title.charAt(0)}
+            contactInfo.map(({ icon: Icon, title, value }, index) => (
+              <div
+                class="group flex items-start gap-4"
+                data-reveal
+                style={`transition-delay: ${index * 80}ms`}
+              >
+                <div class="w-11 h-11 rounded-full bg-brand-50 flex items-center justify-center shrink-0 text-brand-600 group-hover:bg-brand-600 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                  <Icon size={18} />
                 </div>
                 <div>
                   <p class="text-xs text-neutral-400 font-medium uppercase tracking-wide">
