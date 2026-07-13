@@ -46,7 +46,7 @@ const seo = {
 ---
 
 <Layout seo={seo}>
-  <div class="bg-slate-50">
+  <div class="bg-neutral-50">
     <section class="relative overflow-hidden">
       <Image
         src={treatment.image}
@@ -57,12 +57,12 @@ const seo = {
         fetchpriority="high"
         class="absolute inset-0 h-full w-full object-cover"
       />
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/70 to-slate-900/40" />
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-950/90 via-brand-900/75 to-brand-900/45" />
 
       <div class="relative mx-auto flex min-h-[650px] max-w-7xl items-center px-6 py-24">
         <div class="grid w-full gap-16 lg:grid-cols-2">
           <div class="text-white">
-            <div class="mb-6 flex items-center gap-2 text-sm text-slate-300">
+            <div class="mb-6 flex items-center gap-2 text-sm text-neutral-300">
               <a href="/">Home</a>
               <ChevronRight size={16} />
               <a href="/treatments">Treatments</a>
@@ -70,34 +70,34 @@ const seo = {
               <span class="text-white">{treatment.title}</span>
             </div>
 
-            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-5 py-2 text-sm font-medium backdrop-blur">
+            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-400/30 bg-brand-500/10 px-5 py-2 text-sm font-medium backdrop-blur">
               <ShieldCheck size={18} />
               Advanced Orthopedic Care
             </div>
 
             <h1 class="mb-6 text-5xl font-bold leading-tight lg:text-6xl">{treatment.title}</h1>
 
-            <p class="max-w-2xl text-lg leading-9 text-slate-200">{treatment.heroDescription}</p>
+            <p class="max-w-2xl text-lg leading-9 text-neutral-200">{treatment.heroDescription}</p>
 
             <div class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
               <div class="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur">
-                <Hospital className="mb-3 text-cyan-300" size={28} />
-                <p class="text-xs uppercase tracking-widest text-slate-300">Hospital Stay</p>
+                <Hospital className="mb-3 text-brand-300" size={28} />
+                <p class="text-xs uppercase tracking-widest text-neutral-300">Hospital Stay</p>
                 <h4 class="mt-2 font-semibold">{treatment.treatmentInfo?.hospitalStay}</h4>
               </div>
               <div class="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur">
-                <Clock3 className="mb-3 text-cyan-300" size={28} />
-                <p class="text-xs uppercase tracking-widest text-slate-300">Duration</p>
+                <Clock3 className="mb-3 text-brand-300" size={28} />
+                <p class="text-xs uppercase tracking-widest text-neutral-300">Duration</p>
                 <h4 class="mt-2 font-semibold">{treatment.treatmentInfo?.duration}</h4>
               </div>
               <div class="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur">
-                <Activity className="mb-3 text-cyan-300" size={28} />
-                <p class="text-xs uppercase tracking-widest text-slate-300">Recovery</p>
+                <Activity className="mb-3 text-brand-300" size={28} />
+                <p class="text-xs uppercase tracking-widest text-neutral-300">Recovery</p>
                 <h4 class="mt-2 font-semibold">{treatment.treatmentInfo?.recoveryTime}</h4>
               </div>
               <div class="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur">
-                <CheckCircle2 className="mb-3 text-cyan-300" size={28} />
-                <p class="text-xs uppercase tracking-widest text-slate-300">Success</p>
+                <CheckCircle2 className="mb-3 text-brand-300" size={28} />
+                <p class="text-xs uppercase tracking-widest text-neutral-300">Success</p>
                 <h4 class="mt-2 font-semibold">{treatment.treatmentInfo?.successRate}</h4>
               </div>
             </div>
@@ -105,14 +105,14 @@ const seo = {
             <div class="mt-10 flex flex-wrap gap-5">
               <button
                 data-open-popup
-                class="flex items-center cursor-pointer gap-3 rounded-xl bg-cyan-500 px-8 py-4 font-semibold transition hover:bg-cyan-600"
+                class="flex items-center cursor-pointer gap-3 rounded-xl bg-brand-500 px-8 py-4 font-semibold transition hover:bg-brand-600"
               >
                 Book Consultation
                 <ArrowRight size={20} />
               </button>
               <a
                 href="tel:+918882892502"
-                class="flex items-center cursor-pointer gap-3 rounded-xl border border-white px-8 py-4 font-semibold transition hover:bg-white hover:text-slate-900"
+                class="flex items-center cursor-pointer gap-3 rounded-xl border border-white px-8 py-4 font-semibold transition hover:bg-white hover:text-neutral-900"
               >
                 Call Now
               </a>
@@ -121,36 +121,36 @@ const seo = {
 
           <div class="flex justify-end">
             <div class="w-full max-w-md rounded-3xl bg-white p-8 shadow-2xl">
-              <h3 class="mb-8 text-2xl font-bold text-slate-900">Treatment Information</h3>
+              <h3 class="mb-8 text-2xl font-bold text-neutral-900">Treatment Information</h3>
               <div class="space-y-6">
                 <div class="flex justify-between border-b pb-4">
-                  <span class="text-slate-500">Procedure</span>
+                  <span class="text-neutral-500">Procedure</span>
                   <span class="font-semibold">{treatment.treatmentInfo?.surgery}</span>
                 </div>
                 <div class="flex justify-between border-b pb-4">
-                  <span class="text-slate-500">Duration</span>
+                  <span class="text-neutral-500">Duration</span>
                   <span class="font-semibold">{treatment.treatmentInfo?.duration}</span>
                 </div>
                 <div class="flex justify-between border-b pb-4">
-                  <span class="text-slate-500">Hospital Stay</span>
+                  <span class="text-neutral-500">Hospital Stay</span>
                   <span class="font-semibold">{treatment.treatmentInfo?.hospitalStay}</span>
                 </div>
                 <div class="flex justify-between border-b pb-4">
-                  <span class="text-slate-500">Anaesthesia</span>
+                  <span class="text-neutral-500">Anaesthesia</span>
                   <span class="font-semibold">{treatment.treatmentInfo?.anaesthesia}</span>
                 </div>
                 <div class="flex justify-between border-b pb-4">
-                  <span class="text-slate-500">Recovery</span>
+                  <span class="text-neutral-500">Recovery</span>
                   <span class="font-semibold">{treatment.treatmentInfo?.recoveryTime}</span>
                 </div>
                 <div class="flex justify-between">
-                  <span class="text-slate-500">Success Rate</span>
+                  <span class="text-neutral-500">Success Rate</span>
                   <span class="font-bold text-emerald-600">{treatment.treatmentInfo?.successRate}</span>
                 </div>
               </div>
               <button
                 data-open-popup
-                class="mt-10 w-full cursor-pointer rounded-xl bg-slate-900 py-4 font-semibold text-white transition hover:bg-slate-800"
+                class="mt-10 w-full cursor-pointer rounded-xl bg-neutral-900 py-4 font-semibold text-white transition hover:bg-neutral-800"
               >
                 Get Free Consultation
               </button>
@@ -161,22 +161,22 @@ const seo = {
     </section>
 
     <section class="mx-auto max-w-7xl px-6 py-24">
-      <div class="grid gap-16 lg:grid-cols-[2fr_1fr]">
+      <div class="grid gap-16 lg:grid-cols-[2fr_1fr]" data-reveal>
         <div>
-          <span class="rounded-full bg-cyan-100 px-5 py-2 text-sm font-semibold text-cyan-700">Overview</span>
-          <h2 class="mt-6 text-5xl font-bold text-slate-900">What is {treatment.title}?</h2>
-          <p class="mt-8 text-lg leading-9 text-slate-600">{treatment.overview}</p>
+          <span class="rounded-full bg-brand-100 px-5 py-2 text-sm font-semibold text-brand-700">Overview</span>
+          <h2 class="mt-6 text-5xl font-bold text-neutral-900">What is {treatment.title}?</h2>
+          <p class="mt-8 text-lg leading-9 text-neutral-600">{treatment.overview}</p>
         </div>
-        <div class="sticky top-24 h-fit rounded-3xl bg-gradient-to-br from-cyan-600 to-sky-700 p-8 text-white shadow-xl">
+        <div class="sticky top-24 h-fit rounded-3xl bg-gradient-to-br from-brand-600 to-brand-700 p-8 text-white shadow-xl">
           <Calendar size={42} />
           <h3 class="mt-6 text-2xl font-bold">Book Your Appointment</h3>
-          <p class="mt-4 leading-8 text-cyan-50">
+          <p class="mt-4 leading-8 text-brand-50">
             Speak with our experienced orthopedic specialists and receive a
             personalized treatment plan.
           </p>
           <button
             data-open-popup
-            class="mt-8 w-full cursor-pointer rounded-xl bg-white py-4 font-semibold text-sky-700 transition hover:bg-slate-100"
+            class="mt-8 w-full cursor-pointer rounded-xl bg-white py-4 font-semibold text-brand-700 transition hover:bg-neutral-100"
           >
             Schedule Consultation
           </button>
@@ -205,12 +205,12 @@ const seo = {
     {
       treatment.types && (
         <section class="mx-auto max-w-7xl px-6 pb-24">
-          <div class="mb-14 text-center">
-            <span class="rounded-full bg-cyan-100 px-5 py-2 text-sm font-semibold text-cyan-700">
+          <div class="mb-14 text-center" data-reveal>
+            <span class="rounded-full bg-brand-100 px-5 py-2 text-sm font-semibold text-brand-700">
               Treatment Types
             </span>
-            <h2 class="mt-5 text-5xl font-bold text-slate-900">Types of {treatment.title}</h2>
-            <p class="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+            <h2 class="mt-5 text-5xl font-bold text-neutral-900">Types of {treatment.title}</h2>
+            <p class="mx-auto mt-5 max-w-3xl text-lg leading-8 text-neutral-600">
               Depending on your condition, our orthopedic specialists recommend
               the most suitable treatment approach for better recovery and long
               term results.
@@ -218,12 +218,12 @@ const seo = {
           </div>
           <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {treatment.types.map((type) => (
-              <div class="rounded-3xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-xl">
-                <div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan-100">
-                  <Activity className="text-cyan-700" size={30} />
+              <div class="rounded-3xl border border-neutral-200 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:border-brand-500 hover:shadow-xl">
+                <div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-100">
+                  <Activity className="text-brand-700" size={30} />
                 </div>
-                <h3 class="mb-4 text-2xl font-bold text-slate-900">{type.title}</h3>
-                <p class="leading-8 text-slate-600">{type.description}</p>
+                <h3 class="mb-4 text-2xl font-bold text-neutral-900">{type.title}</h3>
+                <p class="leading-8 text-neutral-600">{type.description}</p>
               </div>
             ))}
           </div>
@@ -233,17 +233,17 @@ const seo = {
 
     <section class="bg-white py-24">
       <div class="mx-auto max-w-7xl px-6">
-        <div class="mb-14 text-center">
+        <div class="mb-14 text-center" data-reveal>
           <span class="rounded-full bg-red-100 px-5 py-2 text-sm font-semibold text-red-600">Symptoms</span>
-          <h2 class="mt-5 text-5xl font-bold text-slate-900">Common Symptoms</h2>
+          <h2 class="mt-5 text-5xl font-bold text-neutral-900">Common Symptoms</h2>
         </div>
         <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {treatment.symptoms.map((item) => (
-            <div class="flex items-center gap-5 rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:border-cyan-500 hover:bg-white hover:shadow-lg">
-              <div class="flex h-14 w-14 items-center justify-center rounded-full bg-cyan-100">
-                <CheckCircle2 className="text-cyan-700" size={24} />
+            <div class="flex items-center gap-5 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 transition hover:border-brand-500 hover:bg-white hover:shadow-lg">
+              <div class="flex h-14 w-14 items-center justify-center rounded-full bg-brand-100">
+                <CheckCircle2 className="text-brand-700" size={24} />
               </div>
-              <p class="font-medium text-slate-700">{item}</p>
+              <p class="font-medium text-neutral-700">{item}</p>
             </div>
           ))}
         </div>
@@ -253,21 +253,21 @@ const seo = {
     {
       treatment.feelLike && (
         <section class="mx-auto max-w-7xl px-6 py-24">
-          <div class="grid items-center gap-16 lg:grid-cols-2">
+          <div class="grid items-center gap-16 lg:grid-cols-2" data-reveal>
             <div>
               <span class="rounded-full bg-orange-100 px-5 py-2 text-sm font-semibold text-orange-600">
                 Patient Experience
               </span>
-              <h2 class="mt-6 text-5xl font-bold text-slate-900">What Does It Feel Like?</h2>
-              <p class="mt-6 text-lg leading-8 text-slate-600">
+              <h2 class="mt-6 text-5xl font-bold text-neutral-900">What Does It Feel Like?</h2>
+              <p class="mt-6 text-lg leading-8 text-neutral-600">
                 Patients with this condition commonly experience the following
                 discomforts during daily activities.
               </p>
             </div>
             <div class="space-y-5">
               {treatment.feelLike.map((item) => (
-                <div class="rounded-2xl border-l-4 border-cyan-600 bg-white p-6 shadow-sm">
-                  <p class="text-lg leading-8 text-slate-700">{item}</p>
+                <div class="rounded-2xl border-l-4 border-brand-600 bg-white p-6 shadow-sm">
+                  <p class="text-lg leading-8 text-neutral-700">{item}</p>
                 </div>
               ))}
             </div>
@@ -276,15 +276,15 @@ const seo = {
       )
     }
 
-    <section class="bg-slate-100 py-24">
-      <div class="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2">
+    <section class="bg-neutral-100 py-24">
+      <div class="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2" data-reveal>
         <div class="rounded-3xl bg-white p-10 shadow-sm">
-          <h2 class="mb-8 text-4xl font-bold text-slate-900">Causes</h2>
+          <h2 class="mb-8 text-4xl font-bold text-neutral-900">Causes</h2>
           <div class="space-y-5">
             {treatment.causes.map((item) => (
               <div class="flex gap-4">
-                <CheckCircle2 className="mt-1 shrink-0 text-cyan-600" size={22} />
-                <p class="leading-8 text-slate-700">{item}</p>
+                <CheckCircle2 className="mt-1 shrink-0 text-brand-600" size={22} />
+                <p class="leading-8 text-neutral-700">{item}</p>
               </div>
             ))}
           </div>
@@ -292,12 +292,12 @@ const seo = {
 
         {treatment.riskFactors && (
           <div class="rounded-3xl bg-white p-10 shadow-sm">
-            <h2 class="mb-8 text-4xl font-bold text-slate-900">Risk Factors</h2>
+            <h2 class="mb-8 text-4xl font-bold text-neutral-900">Risk Factors</h2>
             <div class="space-y-5">
               {treatment.riskFactors.map((item) => (
                 <div class="flex gap-4">
                   <ShieldCheck className="mt-1 shrink-0 text-red-500" size={22} />
-                  <p class="leading-8 text-slate-700">{item}</p>
+                  <p class="leading-8 text-neutral-700">{item}</p>
                 </div>
               ))}
             </div>
@@ -309,17 +309,17 @@ const seo = {
     {
       treatment.diagnosis && (
         <section class="mx-auto max-w-7xl px-6 py-24">
-          <div class="mb-14 text-center">
-            <span class="rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">Diagnosis</span>
-            <h2 class="mt-5 text-5xl font-bold text-slate-900">Diagnosis Process</h2>
+          <div class="mb-14 text-center" data-reveal>
+            <span class="rounded-full bg-brand-100 px-5 py-2 text-sm font-semibold text-brand-700">Diagnosis</span>
+            <h2 class="mt-5 text-5xl font-bold text-neutral-900">Diagnosis Process</h2>
           </div>
           <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {treatment.diagnosis.map((item) => (
-              <div class="rounded-3xl border border-slate-200 bg-white p-8 text-center transition hover:-translate-y-2 hover:border-cyan-500 hover:shadow-xl">
-                <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-cyan-100">
-                  <Hospital className="text-cyan-700" size={30} />
+              <div class="rounded-3xl border border-neutral-200 bg-white p-8 text-center transition hover:-translate-y-2 hover:border-brand-500 hover:shadow-xl">
+                <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-brand-100">
+                  <Hospital className="text-brand-700" size={30} />
                 </div>
-                <h3 class="text-xl font-semibold text-slate-900">{item}</h3>
+                <h3 class="text-xl font-semibold text-neutral-900">{item}</h3>
               </div>
             ))}
           </div>
@@ -329,19 +329,19 @@ const seo = {
 
     <section class="bg-white py-24">
       <div class="mx-auto max-w-7xl px-6">
-        <div class="mb-14 text-center">
+        <div class="mb-14 text-center" data-reveal>
           <span class="rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700">Treatment</span>
-          <h2 class="mt-5 text-5xl font-bold text-slate-900">Treatment Options</h2>
+          <h2 class="mt-5 text-5xl font-bold text-neutral-900">Treatment Options</h2>
         </div>
         <div class="grid gap-10 lg:grid-cols-2">
           {treatment.nonSurgicalTreatment && (
-            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-10">
-              <h3 class="mb-8 text-3xl font-bold text-slate-900">Non-Surgical Treatment</h3>
+            <div class="rounded-3xl border border-neutral-200 bg-neutral-50 p-10">
+              <h3 class="mb-8 text-3xl font-bold text-neutral-900">Non-Surgical Treatment</h3>
               <div class="space-y-5">
                 {treatment.nonSurgicalTreatment.map((item) => (
                   <div class="flex gap-4">
                     <CheckCircle2 className="mt-1 shrink-0 text-emerald-600" size={22} />
-                    <p class="leading-8 text-slate-700">{item}</p>
+                    <p class="leading-8 text-neutral-700">{item}</p>
                   </div>
                 ))}
               </div>
@@ -349,12 +349,12 @@ const seo = {
           )}
 
           {treatment.surgicalTreatment && (
-            <div class="rounded-3xl bg-gradient-to-br from-cyan-700 to-sky-800 p-10 text-white">
+            <div class="rounded-3xl bg-gradient-to-br from-brand-700 to-brand-800 p-10 text-white">
               <h3 class="mb-8 text-3xl font-bold">Surgical Treatment</h3>
-              <p class="leading-9 text-slate-100">{treatment.surgicalTreatment}</p>
+              <p class="leading-9 text-neutral-100">{treatment.surgicalTreatment}</p>
               <a
                 href="tel:+918882892502"
-                class="mt-10 inline-block rounded-xl bg-white px-8 py-4 font-semibold text-cyan-700 transition hover:bg-slate-100"
+                class="mt-10 inline-block rounded-xl bg-white px-8 py-4 font-semibold text-brand-700 transition hover:bg-neutral-100"
               >
                 Call Now
               </a>
@@ -367,25 +367,25 @@ const seo = {
     {
       treatment.recovery && (
         <section class="mx-auto max-w-7xl px-6 py-24">
-          <div class="mb-14 text-center">
-            <span class="rounded-full bg-cyan-100 px-5 py-2 text-sm font-semibold text-cyan-700">Recovery</span>
-            <h2 class="mt-5 text-5xl font-bold text-slate-900">Recovery Timeline</h2>
-            <p class="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+          <div class="mb-14 text-center" data-reveal>
+            <span class="rounded-full bg-brand-100 px-5 py-2 text-sm font-semibold text-brand-700">Recovery</span>
+            <h2 class="mt-5 text-5xl font-bold text-neutral-900">Recovery Timeline</h2>
+            <p class="mx-auto mt-5 max-w-3xl text-lg leading-8 text-neutral-600">
               Recovery may vary depending on your condition and overall health,
               but most patients can expect the following timeline.
             </p>
           </div>
           <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {Object.entries(treatment.recovery).map(([key, value], index) => (
-              <div class="relative rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:border-cyan-500 hover:shadow-xl">
-                <div class="absolute -top-5 left-8 flex h-12 w-12 items-center justify-center rounded-full bg-cyan-600 text-lg font-bold text-white">
+              <div class="relative rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:border-brand-500 hover:shadow-xl">
+                <div class="absolute -top-5 left-8 flex h-12 w-12 items-center justify-center rounded-full bg-brand-600 text-lg font-bold text-white">
                   {index + 1}
                 </div>
-                <Clock3 className="mb-5 mt-6 text-cyan-600" size={30} />
-                <h3 class="mb-3 text-2xl font-bold capitalize text-slate-900">
+                <Clock3 className="mb-5 mt-6 text-brand-600" size={30} />
+                <h3 class="mb-3 text-2xl font-bold capitalize text-neutral-900">
                   {key.replace(/([A-Z])/g, " $1")}
                 </h3>
-                <p class="leading-8 text-slate-600">{value}</p>
+                <p class="leading-8 text-neutral-600">{value}</p>
               </div>
             ))}
           </div>
@@ -397,9 +397,9 @@ const seo = {
       treatment.complications && (
         <section class="bg-red-50 py-24">
           <div class="mx-auto max-w-7xl px-6">
-            <div class="mb-14 text-center">
+            <div class="mb-14 text-center" data-reveal>
               <span class="rounded-full bg-red-100 px-5 py-2 text-sm font-semibold text-red-600">Risks</span>
-              <h2 class="mt-5 text-5xl font-bold text-slate-900">Possible Complications</h2>
+              <h2 class="mt-5 text-5xl font-bold text-neutral-900">Possible Complications</h2>
             </div>
             <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {treatment.complications.map((item) => (
@@ -407,7 +407,7 @@ const seo = {
                   <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-red-100">
                     <ShieldCheck className="text-red-600" size={22} />
                   </div>
-                  <p class="leading-8 text-slate-700">{item}</p>
+                  <p class="leading-8 text-neutral-700">{item}</p>
                 </div>
               ))}
             </div>
@@ -419,15 +419,15 @@ const seo = {
     {
       treatment.prevention && (
         <section class="mx-auto max-w-7xl px-6 py-24">
-          <div class="mb-14 text-center">
+          <div class="mb-14 text-center" data-reveal>
             <span class="rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700">Prevention</span>
-            <h2 class="mt-5 text-5xl font-bold text-slate-900">How to Prevent This Condition</h2>
+            <h2 class="mt-5 text-5xl font-bold text-neutral-900">How to Prevent This Condition</h2>
           </div>
           <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {treatment.prevention.map((item) => (
               <div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-6 transition hover:-translate-y-2 hover:bg-white hover:shadow-lg">
                 <CheckCircle2 className="mb-5 text-emerald-600" size={28} />
-                <p class="leading-8 text-slate-700">{item}</p>
+                <p class="leading-8 text-neutral-700">{item}</p>
               </div>
             ))}
           </div>
@@ -439,19 +439,19 @@ const seo = {
       treatment.treatmentInfo && (
         <section class="bg-white py-24">
           <div class="mx-auto max-w-6xl px-6">
-            <div class="mb-14 text-center">
-              <span class="rounded-full bg-slate-100 px-5 py-2 text-sm font-semibold text-slate-700">Information</span>
-              <h2 class="mt-5 text-5xl font-bold text-slate-900">Treatment Information</h2>
+            <div class="mb-14 text-center" data-reveal>
+              <span class="rounded-full bg-neutral-100 px-5 py-2 text-sm font-semibold text-neutral-700">Information</span>
+              <h2 class="mt-5 text-5xl font-bold text-neutral-900">Treatment Information</h2>
             </div>
-            <div class="overflow-hidden rounded-3xl border border-slate-200">
+            <div class="overflow-hidden rounded-3xl border border-neutral-200">
               <table class="w-full">
                 <tbody>
                   {Object.entries(treatment.treatmentInfo).map(([key, value]) => (
                     <tr class="border-b last:border-none">
-                      <td class="bg-slate-50 p-6 font-semibold capitalize text-slate-800">
+                      <td class="bg-neutral-50 p-6 font-semibold capitalize text-neutral-800">
                         {key.replace(/([A-Z])/g, " $1")}
                       </td>
-                      <td class="p-6 text-slate-600">{value}</td>
+                      <td class="p-6 text-neutral-600">{value}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -465,23 +465,23 @@ const seo = {
     {
       treatment.cost && (
         <section class="py-24">
-          <div class="mx-auto max-w-6xl px-6">
-            <div class="overflow-hidden rounded-[32px] bg-gradient-to-r from-cyan-700 to-sky-800 text-white shadow-2xl">
+          <div class="mx-auto max-w-6xl px-6" data-reveal>
+            <div class="overflow-hidden rounded-[32px] bg-gradient-to-r from-brand-700 to-brand-800 text-white shadow-2xl">
               <div class="grid gap-10 lg:grid-cols-2">
                 <div class="p-12">
                   <span class="rounded-full bg-white/20 px-5 py-2 text-sm">Estimated Cost</span>
                   <h2 class="mt-6 text-5xl font-bold">{treatment.cost.india}</h2>
-                  <p class="mt-6 text-lg leading-8 text-slate-100">
+                  <p class="mt-6 text-lg leading-8 text-neutral-100">
                     The treatment cost may vary depending on multiple medical
                     and hospital-related factors.
                   </p>
                 </div>
-                <div class="bg-white p-12 text-slate-800">
+                <div class="bg-white p-12 text-neutral-800">
                   <h3 class="mb-8 text-3xl font-bold">Cost Depends On</h3>
                   <div class="space-y-5">
                     {treatment.cost.dependsOn.map((item) => (
                       <div class="flex gap-4">
-                        <CheckCircle2 className="mt-1 shrink-0 text-cyan-600" size={22} />
+                        <CheckCircle2 className="mt-1 shrink-0 text-brand-600" size={22} />
                         <p>{item}</p>
                       </div>
                     ))}
@@ -496,13 +496,13 @@ const seo = {
 
     {
       relatedDoctors.length > 0 && (
-        <section class="bg-slate-100 py-24">
+        <section class="bg-neutral-100 py-24">
           <div class="mx-auto max-w-7xl px-6">
-            <div class="mb-14 text-center">
-              <span class="rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
+            <div class="mb-14 text-center" data-reveal>
+              <span class="rounded-full bg-brand-100 px-5 py-2 text-sm font-semibold text-brand-700">
                 Our Specialists
               </span>
-              <h2 class="mt-5 text-5xl font-bold text-slate-900">
+              <h2 class="mt-5 text-5xl font-bold text-neutral-900">
                 Doctors Who Treat This Condition
               </h2>
             </div>
@@ -510,7 +510,7 @@ const seo = {
               {relatedDoctors.map((doctor) => (
                 <a
                   href={`/doctors/${doctor.id}`}
-                  class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-lg transition-shadow"
+                  class="bg-white rounded-3xl overflow-hidden shadow-sm border border-neutral-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                 >
                   <img
                     src={imageSrc(doctor.image)}
@@ -521,8 +521,8 @@ const seo = {
                     class="w-full h-64 object-cover"
                   />
                   <div class="p-5">
-                    <h3 class="font-bold text-lg text-slate-900">{doctor.name}</h3>
-                    <p class="text-blue-600 text-sm font-medium">{doctor.speciality}</p>
+                    <h3 class="font-bold text-lg text-neutral-900">{doctor.name}</h3>
+                    <p class="text-brand-600 text-sm font-medium">{doctor.speciality}</p>
                   </div>
                 </a>
               ))}
@@ -535,22 +535,26 @@ const seo = {
     {
       treatment.faq && (
         <section class="mx-auto max-w-5xl px-6 py-24">
-          <div class="mb-14 text-center">
+          <div class="mb-14 text-center" data-reveal>
             <span class="rounded-full bg-yellow-100 px-5 py-2 text-sm font-semibold text-yellow-700">FAQs</span>
-            <h2 class="mt-5 text-5xl font-bold text-slate-900">Frequently Asked Questions</h2>
+            <h2 class="mt-5 text-5xl font-bold text-neutral-900">Frequently Asked Questions</h2>
           </div>
           <div class="space-y-6">
-            {treatment.faq.map((item) => (
-              <details class="faq-item overflow-hidden rounded-2xl border border-slate-200 bg-white">
+            {treatment.faq.map((item, index) => (
+              <details
+                class="faq-item overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-colors hover:border-brand-200"
+                data-reveal
+                style={`transition-delay: ${index * 50}ms`}
+              >
                 <summary class="flex w-full cursor-pointer items-center justify-between p-6 text-left list-none">
-                  <h3 class="text-xl font-semibold text-slate-900">{item.question}</h3>
+                  <h3 class="text-xl font-semibold text-neutral-900">{item.question}</h3>
                   <span class="text-3xl shrink-0 pl-4">
                     <span class="faq-plus">+</span>
                     <span class="faq-minus hidden">−</span>
                   </span>
                 </summary>
                 <div class="border-t px-6 py-6">
-                  <p class="leading-8 text-slate-600">{item.answer}</p>
+                  <p class="leading-8 text-neutral-600">{item.answer}</p>
                 </div>
               </details>
             ))}
@@ -561,11 +565,11 @@ const seo = {
 
     {
       treatment.youtube && (
-        <section class="bg-slate-100 py-24">
+        <section class="bg-neutral-100 py-24">
           <div class="mx-auto max-w-6xl px-6">
-            <div class="mb-14 text-center">
-              <span class="rounded-full bg-cyan-100 px-5 py-2 text-sm font-semibold text-cyan-700">Video Guide</span>
-              <h2 class="mt-5 text-5xl font-bold text-slate-900">Watch Treatment Video</h2>
+            <div class="mb-14 text-center" data-reveal>
+              <span class="rounded-full bg-brand-100 px-5 py-2 text-sm font-semibold text-brand-700">Video Guide</span>
+              <h2 class="mt-5 text-5xl font-bold text-neutral-900">Watch Treatment Video</h2>
             </div>
             <div class="overflow-hidden rounded-[32px] shadow-2xl">
               <iframe
@@ -582,9 +586,12 @@ const seo = {
     }
 
     <section class="px-6 py-24">
-      <div class="mx-auto max-w-7xl overflow-hidden rounded-[36px] bg-gradient-to-r from-cyan-700 via-sky-700 to-blue-800 p-14 text-center text-white shadow-2xl">
+      <div
+        class="mx-auto max-w-7xl overflow-hidden rounded-[36px] bg-gradient-to-r from-brand-600 via-brand-700 to-brand-900 p-14 text-center text-white shadow-2xl"
+        data-reveal
+      >
         <h2 class="text-5xl font-bold">Ready to Begin Your Recovery?</h2>
-        <p class="mx-auto mt-8 max-w-3xl text-lg leading-9 text-slate-100">
+        <p class="mx-auto mt-8 max-w-3xl text-lg leading-9 text-neutral-100">
           Our experienced orthopedic specialists provide personalized
           treatment plans, advanced surgical care, and comprehensive
           rehabilitation to help you recover faster and return to your daily
@@ -593,13 +600,13 @@ const seo = {
         <div class="mt-12 flex flex-wrap justify-center gap-5">
           <button
             data-open-popup
-            class="rounded-xl cursor-pointer bg-white px-10 py-4 font-semibold text-cyan-700 transition hover:bg-slate-100"
+            class="rounded-xl cursor-pointer bg-white px-10 py-4 font-semibold text-brand-700 transition hover:bg-neutral-100"
           >
             Book Appointment
           </button>
           <a
             href="tel:+918882892502"
-            class="rounded-xl cursor-pointer border border-white px-10 py-4 font-semibold transition hover:bg-white hover:text-cyan-700"
+            class="rounded-xl cursor-pointer border border-white px-10 py-4 font-semibold transition hover:bg-white hover:text-brand-700"
           >
             Call Now
           </a>

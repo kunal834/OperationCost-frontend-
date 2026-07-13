@@ -20,19 +20,19 @@ const isActive = (path) =>
 ---
 
 <nav
-  class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100"
+  class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-neutral-100"
 >
   <div
     class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4"
   >
-    <a href="/" class="flex items-center gap-3 shrink-0">
+    <a href="/" class="group flex items-center gap-3 shrink-0">
       <div class="leading-none">
-        <p class="font-bold text-lg sm:text-xl lg:text-3xl">
-          <span class="text-blue-600">Operation</span>{" "}
-          <span class="text-cyan-500">Cost</span>
+        <p class="font-extrabold text-lg sm:text-xl lg:text-3xl tracking-tight">
+          <span class="text-brand-600">Operation</span>{" "}
+          <span class="text-accent-600">Cost</span>
         </p>
         <p
-          class="hidden lg:block text-[11px] tracking-[0.35em] uppercase text-gray-500 mt-1"
+          class="hidden lg:block text-[11px] tracking-[0.35em] uppercase text-neutral-500 mt-1"
         >
           Compare • Choose • Care
         </p>
@@ -46,14 +46,14 @@ const isActive = (path) =>
         class:list={[
           "group relative py-2 text-sm lg:text-base transition-colors duration-200",
           isActive("/")
-            ? "text-blue-600 font-medium"
-            : "text-gray-700 hover:text-blue-600",
+            ? "text-brand-600 font-medium"
+            : "text-neutral-700 hover:text-brand-600",
         ]}
       >
         Home
         <span
           class:list={[
-            "absolute left-0 -bottom-0.5 h-[2px] bg-blue-600 transition-all duration-300",
+            "absolute left-0 -bottom-0.5 h-[2px] bg-brand-600 transition-all duration-300",
             isActive("/") ? "w-full" : "w-0 group-hover:w-full",
           ]}
         />
@@ -62,7 +62,7 @@ const isActive = (path) =>
       <!-- Treatments Dropdown (CSS-only, no JS) -->
       <div class="relative group py-2">
         <button
-          class="flex items-center gap-1 text-gray-700 hover:text-blue-600 transition"
+          class="flex items-center gap-1 text-neutral-700 hover:text-brand-600 transition"
         >
           Treatments
           <ChevronDown
@@ -71,7 +71,7 @@ const isActive = (path) =>
           />
         </button>
         <span
-          class="absolute left-0 -bottom-0.5 h-[2px] bg-blue-600 w-0 group-hover:w-full transition-all duration-300"
+          class="absolute left-0 -bottom-0.5 h-[2px] bg-brand-600 w-0 group-hover:w-full transition-all duration-300"
         />
         <div
           class="absolute left-0 top-full pt-2 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200"
@@ -83,7 +83,7 @@ const isActive = (path) =>
               treatmentLinks.map((t) => (
                 <a
                   href={`/treatments/${t.slug}`}
-                  class="block px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition"
+                  class="block px-5 py-3 text-neutral-700 hover:bg-brand-50 hover:text-brand-600 transition"
                 >
                   {t.title}
                 </a>
@@ -100,14 +100,14 @@ const isActive = (path) =>
             class:list={[
               "group relative py-2 text-sm lg:text-base transition-colors duration-200",
               isActive(link.path)
-                ? "text-blue-600 font-medium"
-                : "text-gray-700 hover:text-blue-600",
+                ? "text-brand-600 font-medium"
+                : "text-neutral-700 hover:text-brand-600",
             ]}
           >
             {link.label}
             <span
               class:list={[
-                "absolute left-0 -bottom-0.5 h-[2px] bg-blue-600 transition-all duration-300",
+                "absolute left-0 -bottom-0.5 h-[2px] bg-brand-600 transition-all duration-300",
                 isActive(link.path) ? "w-full" : "w-0 group-hover:w-full",
               ]}
             />
@@ -117,7 +117,7 @@ const isActive = (path) =>
 
       <button
         data-open-popup
-        class="bg-blue-600 text-white text-sm lg:text-base px-5 py-3 rounded-xl hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+        class="bg-brand-600 text-white text-sm lg:text-base px-5 py-3 rounded-xl hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-600/20 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
       >
         Book Appointment
       </button>
@@ -126,7 +126,7 @@ const isActive = (path) =>
     <!-- Mobile menu button -->
     <button
       id="mobile-menu-toggle"
-      class="lg:hidden text-gray-700 hover:text-blue-600 transition-colors"
+      class="lg:hidden text-neutral-700 hover:text-brand-600 transition-colors"
       aria-label="Toggle menu"
       aria-expanded="false"
     >
@@ -137,17 +137,17 @@ const isActive = (path) =>
 
   <!-- Mobile menu -->
   <div id="mobile-menu" class="lg:hidden overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out">
-    <div class="px-6 pb-6 flex flex-col gap-1 border-t border-gray-100 bg-white">
+    <div class="px-6 pb-6 flex flex-col gap-1 border-t border-neutral-100 bg-white">
       <a
         href="/"
-        class="py-3 text-gray-700 hover:text-blue-600 transition-colors border-b border-gray-100"
+        class="py-3 text-neutral-700 hover:text-brand-600 transition-colors border-b border-neutral-100"
       >
         Home
       </a>
 
       <button
         id="mobile-treatments-toggle"
-        class="flex items-center justify-between py-3 text-gray-700 hover:text-blue-600 transition-colors border-b border-gray-100"
+        class="flex items-center justify-between py-3 text-neutral-700 hover:text-brand-600 transition-colors border-b border-neutral-100"
         aria-expanded="false"
       >
         Treatments
@@ -160,7 +160,7 @@ const isActive = (path) =>
             treatmentLinks.map((t) => (
               <a
                 href={`/treatments/${t.slug}`}
-                class="py-2.5 text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                class="py-2.5 text-sm text-neutral-600 hover:text-brand-600 transition-colors"
               >
                 {t.title}
               </a>
@@ -173,7 +173,7 @@ const isActive = (path) =>
         navLinks.slice(1).map((link) => (
           <a
             href={link.path}
-            class="py-3 text-gray-700 hover:text-blue-600 transition-colors border-b border-gray-100"
+            class="py-3 text-neutral-700 hover:text-brand-600 transition-colors border-b border-neutral-100"
           >
             {link.label}
           </a>
@@ -182,7 +182,7 @@ const isActive = (path) =>
 
       <button
         data-open-popup
-        class="mt-5 w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 transition-all duration-200 cursor-pointer"
+        class="mt-5 w-full bg-brand-600 text-white py-3 rounded-xl hover:bg-brand-700 transition-all duration-200 cursor-pointer"
       >
         Book Appointment
       </button>

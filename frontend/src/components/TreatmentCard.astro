@@ -1,26 +1,31 @@
 ---
 import { Image } from "astro:assets";
 
-const { slug, title, image } = Astro.props;
+const { slug, title, image, index = 0 } = Astro.props;
 ---
 
 <a
   href={`/treatments/${slug}`}
-  class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-2 block"
+  class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-brand-900/10 transition-all duration-300 hover:-translate-y-2 block"
+  data-reveal
+  style={`transition-delay: ${(index % 8) * 60}ms`}
 >
-  <div class="relative h-56 w-full bg-gray-100">
+  <div class="relative h-56 w-full bg-neutral-100 overflow-hidden">
     <Image
       src={image}
       alt={title}
       loading="lazy"
       width={400}
       height={224}
-      class="h-full w-full object-cover card-fade-in"
+      class="h-full w-full object-cover card-fade-in group-hover:scale-105 transition-transform duration-500"
     />
   </div>
   <div class="p-6">
-    <h3 class="text-xl font-bold">{title}</h3>
-    <p class="text-blue-600 mt-3 font-semibold">Learn More →</p>
+    <h3 class="text-xl font-bold text-neutral-900">{title}</h3>
+    <p class="text-brand-600 mt-3 font-semibold flex items-center gap-1.5">
+      Learn More
+      <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+    </p>
   </div>
 </a>
 

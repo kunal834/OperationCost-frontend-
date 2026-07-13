@@ -23,23 +23,23 @@ const seo = {
 
 <Layout seo={seo}>
   <div class="bg-white">
-    <section class="text-center pt-16 pb-10 px-4">
+    <section class="text-center pt-16 pb-10 px-4" data-reveal>
       <span
-        class="inline-block text-xs font-semibold tracking-wide text-blue-600 bg-blue-50 px-3 py-1 rounded-full mb-4"
+        class="inline-block text-xs font-semibold tracking-wide text-brand-600 bg-brand-50 px-3 py-1 rounded-full mb-4"
       >
         GET IN TOUCH
       </span>
-      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">We're Here To Help</h1>
-      <p class="text-gray-500 mt-3 max-w-xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-bold text-neutral-900">We're Here To Help</h1>
+      <p class="text-neutral-500 mt-3 max-w-xl mx-auto">
         Questions about a treatment or need to book a consultation? Reach out
         and our care team will get back to you shortly.
       </p>
     </section>
 
     <section class="max-w-6xl mx-auto px-4 pb-16 grid md:grid-cols-2 gap-8 items-start">
-      <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8">
-        <h2 class="text-xl font-bold text-gray-900 mb-2">Contact Information</h2>
-        <p class="text-gray-500 text-sm mb-8 leading-relaxed">
+      <div class="bg-white rounded-3xl shadow-sm border border-neutral-100 p-8" data-reveal>
+        <h2 class="text-xl font-bold text-neutral-900 mb-2">Contact Information</h2>
+        <p class="text-neutral-500 text-sm mb-8 leading-relaxed">
           Have questions or need help with your treatment? Our team is always
           ready to assist you with professional, reliable support. Feel free
           to reach out anytime.
@@ -49,27 +49,29 @@ const seo = {
           {
             contactInfo.map(({ title, value }) => (
               <div class="flex items-start gap-4">
-                <div class="w-11 h-11 rounded-full bg-blue-50 flex items-center justify-center shrink-0 text-blue-600 font-semibold text-sm">
+                <div class="w-11 h-11 rounded-full bg-brand-50 flex items-center justify-center shrink-0 text-brand-600 font-semibold text-sm">
                   {title.charAt(0)}
                 </div>
                 <div>
-                  <p class="text-xs text-gray-400 font-medium uppercase tracking-wide">
+                  <p class="text-xs text-neutral-400 font-medium uppercase tracking-wide">
                     {title}
                   </p>
-                  <p class="text-gray-900 font-medium">{value}</p>
+                  <p class="text-neutral-900 font-medium">{value}</p>
                 </div>
               </div>
             ))
           }
         </div>
 
-        <div class="mt-8 pt-6 border-t py-4 border-gray-100 flex items-center gap-2 text-red-600 text-sm font-medium">
+        <div class="mt-8 pt-6 border-t py-4 border-neutral-100 flex items-center gap-2 text-red-600 text-sm font-medium">
           Emergency? Call{" "}
           <a href="tel:+919876543210" class="underline font-bold">+91 98765 43210</a>
         </div>
       </div>
 
-      <ContactForm client:visible />
+      <div data-reveal style="transition-delay: 120ms">
+        <ContactForm client:visible />
+      </div>
     </section>
   </div>
 </Layout>

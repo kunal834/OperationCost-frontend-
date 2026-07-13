@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HealthDashboardHero from "../components/HealthDashboardHero.jsx";
+import { breadcrumbListSchema } from "../lib/schema.js";
+
+const seo = {
+  title: "Recovery Dashboard | OperationCost",
+  description:
+    "See how OperationCost's recovery dashboard tracks mobility, pain, and progress after orthopedic surgery, in real time.",
+  canonicalPath: "/platform",
+  jsonLd: breadcrumbListSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Recovery Dashboard", path: "/platform" },
+  ]),
+};
+---
+
+<Layout seo={seo}>
+  <HealthDashboardHero client:visible />
+</Layout>

@@ -14,16 +14,16 @@ const insuranceCompanies = [
 <section class="bg-white py-16 sm:py-20 lg:py-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-      <div>
-        <span class="inline-flex items-center gap-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 mb-4">
+      <div data-reveal>
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-50 text-brand-700 text-xs font-semibold px-3 py-1 mb-4">
           <ShieldCheck size={14} /> Cashless Insurance Support
         </span>
 
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
           Cashless Surgery on 100+ Insurers
         </h2>
 
-        <p class="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed max-w-md">
+        <p class="mt-5 text-base sm:text-lg text-neutral-600 leading-relaxed max-w-md">
           Don't let finances delay your health. Our dedicated insurance team
           handles all paperwork for a hassle-free cashless experience.
         </p>
@@ -31,28 +31,28 @@ const insuranceCompanies = [
         <div class="flex flex-wrap gap-3 mt-8">
           <button
             data-open-popup
-            class="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl text-sm sm:text-base transition-colors"
+            class="cursor-pointer bg-brand-600 hover:bg-brand-700 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-600/20 text-white font-semibold px-6 py-3 rounded-xl text-sm sm:text-base transition-all duration-200"
           >
             Check Eligibility
           </button>
           <button
             data-open-popup
-            class="cursor-pointer bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold px-6 py-3 rounded-xl text-sm sm:text-base transition-colors border border-blue-200"
+            class="cursor-pointer bg-brand-50 hover:bg-brand-100 text-brand-700 font-semibold px-6 py-3 rounded-xl text-sm sm:text-base transition-colors border border-brand-200"
           >
             No-Cost EMI Plans
           </button>
         </div>
       </div>
 
-      <div class="bg-blue-800 rounded-3xl p-6 sm:p-8">
-        <p class="text-xs font-bold tracking-widest text-blue-200 uppercase mb-5">
+      <div class="bg-brand-800 rounded-3xl p-6 sm:p-8" data-reveal style="transition-delay: 120ms">
+        <p class="text-xs font-bold tracking-widest text-brand-200 uppercase mb-5">
           Featured Insurance Partners
         </p>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {
             insuranceCompanies.map((company) => (
-              <div class="bg-white rounded-xl h-20 flex items-center justify-center px-4 hover:scale-[1.03] transition-transform">
+              <div class="bg-white rounded-xl h-20 flex items-center justify-center px-4 hover:scale-[1.03] transition-transform duration-300">
                 <img
                   src={company.logo}
                   alt={company.name}
@@ -67,12 +67,12 @@ const insuranceCompanies = [
         </div>
 
         <div class="flex items-center gap-3 mt-7">
-          <span class="flex items-center justify-center w-11 h-11 rounded-full bg-orange-500 shrink-0">
+          <span class="flex items-center justify-center w-11 h-11 rounded-full bg-accent-600 shrink-0">
             <Zap size={20} className="text-white" fill="white" />
           </span>
           <div>
             <p class="text-white font-bold text-sm sm:text-base">30-Minute Approval</p>
-            <p class="text-blue-200 text-xs sm:text-sm">Express insurance processing for emergencies</p>
+            <p class="text-brand-200 text-xs sm:text-sm">Express insurance processing for emergencies</p>
           </div>
         </div>
       </div>

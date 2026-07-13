@@ -69,12 +69,12 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-[#0b1f3a] rounded-3xl shadow-xl p-8">
+    <div className="bg-brand-950 rounded-3xl shadow-xl p-8">
       {isSuccess ? (
         <div className="flex flex-col items-center justify-center py-16 text-center">
           <CheckCircle2 size={56} className="text-green-400 mb-4" />
           <h3 className="text-xl font-bold text-white">Query Submitted!</h3>
-          <p className="text-blue-200 mt-1 text-sm">
+          <p className="text-brand-200 mt-1 text-sm">
             Our care coordinator will call you shortly.
           </p>
         </div>
@@ -88,7 +88,7 @@ const ContactForm = () => {
               <div className="relative">
                 <User
                   size={18}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400"
                 />
                 <input
                   type="text"
@@ -96,7 +96,7 @@ const ContactForm = () => {
                   placeholder="Patient Name"
                   value={formData.patientName}
                   onChange={handleChange}
-                  className={`w-full bg-white border rounded-xl pl-11 pr-4 py-3 outline-none text-sm transition-colors focus:ring-2 focus:ring-orange-400/40 ${
+                  className={`w-full bg-white border rounded-xl pl-11 pr-4 py-3 outline-none text-sm transition-colors focus:ring-2 focus:ring-accent-500/40 ${
                     errors.patientName ? "border-red-400" : "border-transparent"
                   }`}
                 />
@@ -112,7 +112,7 @@ const ContactForm = () => {
               <div className="relative">
                 <Phone
                   size={18}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400"
                 />
                 <input
                   type="tel"
@@ -126,7 +126,7 @@ const ContactForm = () => {
                       .replace(/[^0-9]/g, "")
                       .slice(0, 10);
                   }}
-                  className={`w-full bg-white border rounded-xl pl-11 pr-4 py-3 outline-none text-sm transition-colors focus:ring-2 focus:ring-orange-400/40 ${
+                  className={`w-full bg-white border rounded-xl pl-11 pr-4 py-3 outline-none text-sm transition-colors focus:ring-2 focus:ring-accent-500/40 ${
                     errors.phoneNumber ? "border-red-400" : "border-transparent"
                   }`}
                 />
@@ -144,8 +144,8 @@ const ContactForm = () => {
                   name="city"
                   value={formData.city}
                   onChange={handleChange}
-                  className={`w-full appearance-none bg-white border rounded-xl pl-4 pr-10 py-3 outline-none text-sm transition-colors focus:ring-2 focus:ring-orange-400/40 ${
-                    formData.city ? "text-gray-900" : "text-gray-400"
+                  className={`w-full appearance-none bg-white border rounded-xl pl-4 pr-10 py-3 outline-none text-sm transition-colors focus:ring-2 focus:ring-accent-500/40 ${
+                    formData.city ? "text-neutral-900" : "text-neutral-400"
                   } ${errors.city ? "border-red-400" : "border-transparent"}`}
                 >
                   <option value="">Select City</option>
@@ -157,7 +157,7 @@ const ContactForm = () => {
                 </select>
                 <ChevronDown
                   size={16}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-400 pointer-events-none"
                 />
               </div>
               {errors.city && (
@@ -169,7 +169,7 @@ const ContactForm = () => {
               <div className="relative">
                 <MessageSquare
                   size={18}
-                  className="absolute left-4 top-3 text-gray-400"
+                  className="absolute left-4 top-3 text-neutral-400"
                 />
                 <textarea
                   name="message"
@@ -177,7 +177,7 @@ const ContactForm = () => {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className={`w-full bg-white border rounded-xl pl-11 pr-4 py-3 outline-none text-sm resize-none transition-colors focus:ring-2 focus:ring-orange-400/40 ${
+                  className={`w-full bg-white border rounded-xl pl-11 pr-4 py-3 outline-none text-sm resize-none transition-colors focus:ring-2 focus:ring-accent-500/40 ${
                     errors.message ? "border-red-400" : "border-transparent"
                   }`}
                 />
@@ -198,7 +198,7 @@ const ContactForm = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full cursor-pointer bg-orange-500 hover:bg-orange-600 disabled:bg-orange-300 disabled:cursor-not-allowed text-white py-3 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
+              className="w-full cursor-pointer bg-accent-600 hover:bg-accent-700 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent-600/30 disabled:bg-accent-300 disabled:translate-y-0 disabled:shadow-none disabled:cursor-not-allowed text-white py-3 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center gap-2"
             >
               {isSubmitting ? (
                 <>

@@ -98,7 +98,7 @@ const PopupForm = () => {
         <button
           type="button"
           onClick={() => closePopup()}
-          className="absolute cursor-pointer top-5 right-5 p-2 rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors"
+          className="absolute cursor-pointer top-5 right-5 p-2 rounded-full text-neutral-400 hover:text-neutral-700 hover:bg-neutral-100 transition-colors"
         >
           <X size={20} />
         </button>
@@ -106,21 +106,21 @@ const PopupForm = () => {
         {isSuccess ? (
           <div className="flex flex-col items-center justify-center py-10 text-center">
             <CheckCircle2 size={56} className="text-green-500 mb-4" />
-            <h3 className="text-xl font-bold text-gray-900">Request Sent!</h3>
-            <p className="text-gray-500 mt-1">
+            <h3 className="text-xl font-bold text-neutral-900">Request Sent!</h3>
+            <p className="text-neutral-500 mt-1">
               Our care expert will call you shortly.
             </p>
           </div>
         ) : (
           <>
             <div className="text-center mb-6">
-              <span className="inline-block text-xs font-semibold tracking-wide text-blue-600 bg-blue-50 px-3 py-1 rounded-full mb-3">
+              <span className="inline-block text-xs font-semibold tracking-wide text-brand-600 bg-brand-50 px-3 py-1 rounded-full mb-3">
                 100% FREE • NO OBLIGATION
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+              <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900">
                 Book Your Free Consultation
               </h2>
-              <p className="text-gray-500 mt-2 text-sm">
+              <p className="text-neutral-500 mt-2 text-sm">
                 Fill your details and our care expert will call you shortly.
               </p>
             </div>
@@ -130,7 +130,7 @@ const PopupForm = () => {
                 <div className="relative">
                   <User
                     size={18}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400"
                   />
                   <input
                     type="text"
@@ -138,8 +138,8 @@ const PopupForm = () => {
                     placeholder="Patient Name"
                     value={formData.patientName}
                     onChange={handleChange}
-                    className={`w-full border rounded-xl pl-11 pr-4 py-3 outline-none transition-colors focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 ${
-                      errors.patientName ? "border-red-400" : "border-gray-200"
+                    className={`w-full border rounded-xl pl-11 pr-4 py-3 outline-none transition-colors focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 ${
+                      errors.patientName ? "border-red-400" : "border-neutral-200"
                     }`}
                   />
                 </div>
@@ -154,7 +154,7 @@ const PopupForm = () => {
                 <div className="relative">
                   <Phone
                     size={18}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400"
                   />
                   <input
                     type="tel"
@@ -168,8 +168,8 @@ const PopupForm = () => {
                         .replace(/[^0-9]/g, "")
                         .slice(0, 10);
                     }}
-                    className={`w-full border rounded-xl pl-11 pr-4 py-3 outline-none transition-colors focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 ${
-                      errors.phoneNumber ? "border-red-400" : "border-gray-200"
+                    className={`w-full border rounded-xl pl-11 pr-4 py-3 outline-none transition-colors focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 ${
+                      errors.phoneNumber ? "border-red-400" : "border-neutral-200"
                     }`}
                   />
                 </div>
@@ -184,14 +184,14 @@ const PopupForm = () => {
                 <div className="relative">
                   <Stethoscope
                     size={18}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400 pointer-events-none"
                   />
                   <select
                     name="treatment"
                     value={formData.treatment}
                     onChange={handleChange}
-                    className={`w-full appearance-none border rounded-xl pl-11 pr-4 py-3 outline-none transition-colors focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 ${
-                      errors.treatment ? "border-red-400" : "border-gray-200"
+                    className={`w-full appearance-none border rounded-xl pl-11 pr-4 py-3 outline-none transition-colors focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 ${
+                      errors.treatment ? "border-red-400" : "border-neutral-200"
                     }`}
                   >
                     <option value="">Select Treatment</option>
@@ -218,7 +218,7 @@ const PopupForm = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed text-white py-3 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
+                className="w-full cursor-pointer bg-brand-600 hover:bg-brand-700 disabled:bg-brand-300 disabled:cursor-not-allowed text-white py-3 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <>
@@ -230,7 +230,7 @@ const PopupForm = () => {
                 )}
               </button>
 
-              <p className="text-center text-xs text-gray-400">
+              <p className="text-center text-xs text-neutral-400">
                 By submitting, you agree to be contacted by our team.
               </p>
             </form>

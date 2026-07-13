@@ -9,25 +9,29 @@ const steps = [
 ];
 ---
 
-<section class="py-20 bg-blue-50">
+<section class="py-20 bg-brand-50">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-14">
-      <h2 class="text-4xl font-bold">How It Works</h2>
-      <p class="text-gray-600 mt-4">Your journey to better health in 4 simple steps.</p>
+    <div class="text-center mb-14" data-reveal>
+      <h2 class="text-4xl font-bold text-neutral-900">How It Works</h2>
+      <p class="text-neutral-600 mt-4">Your journey to better health in 4 simple steps.</p>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       {
         steps.map(({ icon: Icon, title, desc }, index) => (
-          <div class="bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-2xl transition">
-            <div class="flex justify-center text-blue-600 mb-5">
+          <div
+            class="bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300"
+            data-reveal
+            style={`transition-delay: ${index * 80}ms`}
+          >
+            <div class="flex justify-center text-brand-600 mb-5">
               <Icon size={40} />
             </div>
-            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-5 font-bold">
+            <div class="w-10 h-10 bg-accent-600 text-white rounded-full flex items-center justify-center mx-auto mb-5 font-bold">
               {index + 1}
             </div>
-            <h3 class="text-xl font-bold mb-3">{title}</h3>
-            <p class="text-gray-600">{desc}</p>
+            <h3 class="text-xl font-bold mb-3 text-neutral-900">{title}</h3>
+            <p class="text-neutral-600">{desc}</p>
           </div>
         ))
       }

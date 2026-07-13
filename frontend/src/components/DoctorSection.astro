@@ -6,14 +6,14 @@ import { imageSrc } from "../lib/image.js";
 const { showViewAll = true } = Astro.props;
 ---
 
-<section class="py-12 sm:py-16 md:py-20 bg-gray-50">
+<section class="py-12 sm:py-16 md:py-20 bg-neutral-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="text-center mb-10 sm:mb-14">
-      <span class="inline-block text-xs font-semibold tracking-wide text-blue-600 bg-blue-100 px-3 py-1 rounded-full mb-4">
+    <div class="text-center mb-10 sm:mb-14" data-reveal>
+      <span class="inline-block text-xs font-semibold tracking-wide text-brand-600 bg-brand-100 px-3 py-1 rounded-full mb-4">
         OUR SPECIALISTS
       </span>
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Meet Our Specialists</h2>
-      <p class="text-gray-600 mt-3 sm:mt-4 text-sm sm:text-base max-w-lg mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900">Meet Our Specialists</h2>
+      <p class="text-neutral-600 mt-3 sm:mt-4 text-sm sm:text-base max-w-lg mx-auto">
         Experienced, board-certified doctors committed to your recovery and
         long-term mobility.
       </p>
@@ -21,9 +21,13 @@ const { showViewAll = true } = Astro.props;
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
       {
-        doctors.map((doctor) => (
-          <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow group">
-            <div class="relative">
+        doctors.map((doctor, index) => (
+          <div
+            class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-brand-900/10 hover:-translate-y-1.5 transition-all duration-300 group"
+            data-reveal
+            style={`transition-delay: ${(index % 3) * 80}ms`}
+          >
+            <div class="relative overflow-hidden">
               <a href={`/doctors/${doctor.id}`}>
                 <img
                   src={imageSrc(doctor.image)}
@@ -31,7 +35,7 @@ const { showViewAll = true } = Astro.props;
                   loading="lazy"
                   width="400"
                   height="320"
-                  class="w-full cursor-pointer h-56 sm:h-72 md:h-80 object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                  class="w-full cursor-pointer h-56 sm:h-72 md:h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
               </a>
 
@@ -39,47 +43,47 @@ const { showViewAll = true } = Astro.props;
                 class={`absolute top-4 left-4 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1 ${
                   doctor.available
                     ? "bg-green-100 text-green-700"
-                    : "bg-gray-200 text-gray-600"
+                    : "bg-neutral-200 text-neutral-600"
                 }`}
               >
                 <span
                   class={`w-1.5 h-1.5 rounded-full ${
-                    doctor.available ? "bg-green-500" : "bg-gray-400"
+                    doctor.available ? "bg-green-500" : "bg-neutral-400"
                   }`}
                 />
                 {doctor.available ? "Available Today" : "Fully Booked"}
               </span>
 
-              <span class="absolute top-4 right-4 bg-white/95 backdrop-blur text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 text-gray-800 shadow-sm">
-                <Star size={12} className="text-yellow-500 fill-yellow-500" />
+              <span class="absolute top-4 right-4 bg-white/95 backdrop-blur text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 text-neutral-800 shadow-sm">
+                <Star size={12} className="text-accent-500 fill-accent-500" />
                 {doctor.rating}
               </span>
             </div>
 
             <div class="p-5 sm:p-6">
-              <h3 class="text-xl sm:text-2xl font-bold text-gray-900">{doctor.name}</h3>
-              <p class="text-blue-600 mt-1.5 text-sm sm:text-base font-medium">
+              <h3 class="text-xl sm:text-2xl font-bold text-neutral-900">{doctor.name}</h3>
+              <p class="text-brand-600 mt-1.5 text-sm sm:text-base font-medium">
                 {doctor.speciality}
               </p>
-              <div class="flex items-start gap-1.5 mt-2 text-gray-500 text-xs sm:text-sm">
+              <div class="flex items-start gap-1.5 mt-2 text-neutral-500 text-xs sm:text-sm">
                 <GraduationCap size={15} className="mt-0.5 shrink-0" />
                 <span>{doctor.qualification}</span>
               </div>
-              <div class="flex items-center justify-between mt-2 text-gray-500 text-xs sm:text-sm">
+              <div class="flex items-center justify-between mt-2 text-neutral-500 text-xs sm:text-sm">
                 <span>{doctor.experience}</span>
-                <span class="text-gray-400">{doctor.reviews} reviews</span>
+                <span class="text-neutral-400">{doctor.reviews} reviews</span>
               </div>
 
               <div class="flex gap-2 mt-5 sm:mt-6">
                 <a
                   href={`/doctors/${doctor.id}`}
-                  class="flex-1 text-center border border-gray-200 hover:border-blue-600 hover:text-blue-600 text-gray-700 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-colors"
+                  class="flex-1 text-center border border-neutral-200 hover:border-brand-600 hover:text-brand-600 text-neutral-700 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-colors"
                 >
                   View Profile
                 </a>
                 <button
                   data-open-popup
-                  class="flex-1 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-colors flex items-center justify-center gap-1.5"
+                  class="flex-1 cursor-pointer bg-brand-600 hover:bg-brand-700 text-white py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-colors flex items-center justify-center gap-1.5"
                 >
                   <CalendarCheck size={16} />
                   Book
@@ -93,10 +97,10 @@ const { showViewAll = true } = Astro.props;
 
     {
       showViewAll && (
-        <div class="text-center mt-10 sm:mt-12">
+        <div class="text-center mt-10 sm:mt-12" data-reveal>
           <a
             href="/doctors"
-            class="inline-block cursor-pointer bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-colors"
+            class="inline-block cursor-pointer bg-brand-600 hover:bg-brand-700 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-600/20 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-200"
           >
             View All Doctors
           </a>
