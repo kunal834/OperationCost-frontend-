@@ -5,9 +5,7 @@ import vercel from "@astrojs/vercel";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  // TODO: replace with the confirmed production domain before the first deploy —
-  // this value feeds canonical tags, sitemap <loc> entries, and OG "url" everywhere.
-  site: "https://www.example.com",
+  site: "https://www.operationcost.com",
   output: "static",
   adapter: vercel(),
   integrations: [
