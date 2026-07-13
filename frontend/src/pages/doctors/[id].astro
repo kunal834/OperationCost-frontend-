@@ -182,8 +182,13 @@ const seo = {
       </div>
 
       <div class="bg-white rounded-3xl shadow-sm border border-neutral-100 px-5 sm:px-8 mt-6 accordion-group" data-reveal>
-        <details open class="border-b border-neutral-100 py-1">
-          <summary class="w-full flex items-center justify-between gap-4 cursor-pointer list-none py-4 sm:py-5">
+        <div class="accordion-item border-b border-neutral-100 py-1">
+          <button
+            type="button"
+            class="accordion-trigger w-full flex items-center justify-between gap-4 cursor-pointer list-none py-4 sm:py-5 text-left"
+            aria-expanded="true"
+            aria-controls="doctor-panel-specialities"
+          >
             <div class="flex items-center gap-3 min-w-0">
               <span class="hidden sm:flex items-center justify-center w-9 h-9 rounded-xl bg-brand-50 text-brand-600 shrink-0">
                 <Stethoscope size={18} />
@@ -192,52 +197,65 @@ const seo = {
                 {doctor.name.replace(/^Dr\.?\s*/i, "")}'s Specialities & Expertise
               </h2>
             </div>
-            <span class="chevron flex items-center justify-center w-8 h-8 rounded-full bg-neutral-50 text-brand-900 shrink-0 transition-transform">
+            <span class="chevron flex items-center justify-center w-8 h-8 rounded-full bg-neutral-50 text-brand-900 shrink-0 transition-transform duration-300 rotate-180">
               <ChevronDown size={18} />
             </span>
-          </summary>
-          <div class="pb-5 sm:pb-6">
-            <p class="text-sm sm:text-base text-neutral-600 mb-4">
-              {doctor.name} performs major interventions in the following specialities:
-            </p>
-            <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
-              {
-                doctor.services.map((item) => (
-                  <li class="flex items-start gap-2.5 text-sm sm:text-base text-neutral-700">
-                    <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mt-2 shrink-0" />
-                    {item}
-                  </li>
-                ))
-              }
-            </ul>
+          </button>
+          <div id="doctor-panel-specialities" class="accordion-panel grid" style="grid-template-rows: 1fr">
+            <div class="overflow-hidden">
+              <div class="pb-5 sm:pb-6">
+                <p class="text-sm sm:text-base text-neutral-600 mb-4">
+                  {doctor.name} performs major interventions in the following specialities:
+                </p>
+                <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+                  {
+                    doctor.services.map((item) => (
+                      <li class="flex items-start gap-2.5 text-sm sm:text-base text-neutral-700">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mt-2 shrink-0" />
+                        {item}
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
           </div>
-        </details>
+        </div>
 
-        <details class="py-1">
-          <summary class="w-full flex items-center justify-between gap-4 cursor-pointer list-none py-4 sm:py-5">
+        <div class="accordion-item py-1">
+          <button
+            type="button"
+            class="accordion-trigger w-full flex items-center justify-between gap-4 cursor-pointer list-none py-4 sm:py-5 text-left"
+            aria-expanded="false"
+            aria-controls="doctor-panel-education"
+          >
             <div class="flex items-center gap-3 min-w-0">
               <span class="hidden sm:flex items-center justify-center w-9 h-9 rounded-xl bg-brand-50 text-brand-600 shrink-0">
                 <GraduationCap size={18} />
               </span>
               <h2 class="text-base sm:text-xl font-bold text-neutral-900 truncate">Education & Achievements</h2>
             </div>
-            <span class="chevron flex items-center justify-center w-8 h-8 rounded-full bg-neutral-50 text-brand-900 shrink-0 transition-transform">
+            <span class="chevron flex items-center justify-center w-8 h-8 rounded-full bg-neutral-50 text-brand-900 shrink-0 transition-transform duration-300">
               <ChevronDown size={18} />
             </span>
-          </summary>
-          <div class="pb-5 sm:pb-6">
-            <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
-              {
-                doctor.education.map((item) => (
-                  <li class="flex items-start gap-2.5 text-sm sm:text-base text-neutral-700">
-                    <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mt-2 shrink-0" />
-                    {item}
-                  </li>
-                ))
-              }
-            </ul>
+          </button>
+          <div id="doctor-panel-education" class="accordion-panel grid" style="grid-template-rows: 0fr">
+            <div class="overflow-hidden">
+              <div class="pb-5 sm:pb-6">
+                <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+                  {
+                    doctor.education.map((item) => (
+                      <li class="flex items-start gap-2.5 text-sm sm:text-base text-neutral-700">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mt-2 shrink-0" />
+                        {item}
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
           </div>
-        </details>
+        </div>
       </div>
 
       {
@@ -288,10 +306,26 @@ const seo = {
 </Layout>
 
 <style>
-  details > summary::-webkit-details-marker {
-    display: none;
+  .accordion-panel {
+    transition: grid-template-rows 400ms var(--ease-smooth);
   }
-  details[open] .chevron {
-    transform: rotate(180deg);
+  @media (prefers-reduced-motion: reduce) {
+    .accordion-panel {
+      transition: none;
+    }
   }
 </style>
+
+<script>
+  document.querySelectorAll(".accordion-trigger").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      const panelId = btn.getAttribute("aria-controls");
+      const panel = panelId ? document.getElementById(panelId) : null;
+
+      btn.setAttribute("aria-expanded", String(!expanded));
+      if (panel) panel.style.gridTemplateRows = expanded ? "0fr" : "1fr";
+      btn.querySelector(".chevron")?.classList.toggle("rotate-180", !expanded);
+    });
+  });
+</script>

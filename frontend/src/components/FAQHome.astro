@@ -1,4 +1,6 @@
 ---
+import { ChevronDown } from "lucide-react";
+
 export const faqs = [
   {
     question: "Is the consultation free?",
@@ -45,20 +47,32 @@ export const faqs = [
     <div class="space-y-5">
       {
         faqs.map((faq, index) => (
-          <details
+          <div
             class="faq-item overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-all duration-300 hover:border-brand-100 hover:shadow-lg"
-            open={index === 0}
             data-reveal
             style={`transition-delay: ${index * 60}ms`}
           >
-            <summary class="flex w-full cursor-pointer list-none items-center justify-between p-6 text-left">
+            <button
+              type="button"
+              class="faq-trigger flex w-full cursor-pointer items-center justify-between gap-4 p-6 text-left"
+              aria-expanded={index === 0 ? "true" : "false"}
+              aria-controls={`faq-panel-${index}`}
+            >
               <h3 class="text-lg font-semibold text-neutral-900">{faq.question}</h3>
-              <div class="chevron flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100 text-neutral-600 transition-all">
-                ▾
+              <div class="chevron flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-600 transition-all duration-300">
+                <ChevronDown size={18} />
               </div>
-            </summary>
-            <p class="px-6 pb-6 leading-7 text-neutral-600">{faq.answer}</p>
-          </details>
+            </button>
+            <div
+              id={`faq-panel-${index}`}
+              class="faq-panel grid"
+              style={`grid-template-rows: ${index === 0 ? "1fr" : "0fr"}`}
+            >
+              <div class="overflow-hidden">
+                <p class="px-6 pb-6 leading-7 text-neutral-600">{faq.answer}</p>
+              </div>
+            </div>
+          </div>
         ))
       }
     </div>
@@ -76,16 +90,35 @@ export const faqs = [
 </section>
 
 <style>
-  .faq-item summary::-webkit-details-marker {
-    display: none;
-  }
-  .faq-item[open] {
+  .faq-item.is-open {
     border-color: var(--color-brand-200);
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
   }
-  .faq-item[open] .chevron {
+  .faq-item.is-open .chevron {
     background-color: var(--color-brand-600);
     color: white;
     transform: rotate(180deg);
   }
+  .faq-panel {
+    transition: grid-template-rows 400ms var(--ease-smooth);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq-panel {
+      transition: none;
+    }
+  }
 </style>
+
+<script>
+  document.querySelectorAll(".faq-trigger").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      const panelId = btn.getAttribute("aria-controls");
+      const panel = panelId ? document.getElementById(panelId) : null;
+
+      btn.setAttribute("aria-expanded", String(!expanded));
+      if (panel) panel.style.gridTemplateRows = expanded ? "0fr" : "1fr";
+      btn.closest(".faq-item")?.classList.toggle("is-open", !expanded);
+    });
+  });
+</script>

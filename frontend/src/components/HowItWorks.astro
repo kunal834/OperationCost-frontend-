@@ -9,29 +9,36 @@ const steps = [
 ];
 ---
 
-<section class="py-20 bg-brand-50">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-14" data-reveal>
-      <h2 class="text-4xl font-bold text-neutral-900">How It Works</h2>
-      <p class="text-neutral-600 mt-4">Your journey to better health in 4 simple steps.</p>
+<section class="relative overflow-hidden bg-brand-50 py-20 sm:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-16 sm:mb-20" data-reveal>
+      <span class="inline-flex items-center gap-1.5 rounded-full bg-white text-brand-700 text-xs font-semibold px-3 py-1 mb-4 shadow-sm">
+        YOUR JOURNEY
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight">
+        How It Works
+      </h2>
+      <p class="text-neutral-600 mt-4 max-w-xl mx-auto">
+        Your journey to better health in 4 simple steps.
+      </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+      <div class="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] border-t-2 border-dashed border-brand-300/70" />
+
       {
         steps.map(({ icon: Icon, title, desc }, index) => (
-          <div
-            class="bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300"
-            data-reveal
-            style={`transition-delay: ${index * 80}ms`}
-          >
-            <div class="flex justify-center text-brand-600 mb-5">
-              <Icon size={40} />
+          <div class="relative text-center" data-reveal style={`transition-delay: ${index * 100}ms`}>
+            <div class="relative z-10 mx-auto mb-6 w-16 h-16 rounded-2xl bg-white shadow-lg shadow-brand-900/10 flex items-center justify-center">
+              <Icon size={28} className="text-brand-600" />
+              <span class="absolute -top-2.5 -right-2.5 w-7 h-7 rounded-full bg-accent-600 text-white text-xs font-bold flex items-center justify-center shadow-md">
+                {index + 1}
+              </span>
             </div>
-            <div class="w-10 h-10 bg-accent-600 text-white rounded-full flex items-center justify-center mx-auto mb-5 font-bold">
-              {index + 1}
+            <div class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 h-full">
+              <h3 class="text-lg font-bold mb-2 text-neutral-900">{title}</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">{desc}</p>
             </div>
-            <h3 class="text-xl font-bold mb-3 text-neutral-900">{title}</h3>
-            <p class="text-neutral-600">{desc}</p>
           </div>
         ))
       }
