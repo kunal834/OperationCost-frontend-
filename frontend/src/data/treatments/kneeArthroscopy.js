@@ -166,8 +166,6 @@ const kneeArthroscopy = {
           "Most patients begin walking on the same day or within 24 hours with the surgeon's guidance.",
       },
     ],
-
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
 };
 

@@ -138,8 +138,6 @@ const hipReplacement = {
           "Modern hip implants usually last 15–25 years with proper care.",
       },
     ],
-
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
 };
 

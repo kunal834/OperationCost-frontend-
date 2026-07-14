@@ -172,8 +172,6 @@ const shoulderArthroscopy = {
           "Most patients can safely return to sports after 4 to 6 months once rehabilitation is complete.",
       },
     ],
-
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
 };
 

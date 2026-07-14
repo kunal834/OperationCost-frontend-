@@ -154,8 +154,6 @@ const rotatorCuffRepair = {
           "Most patients regain excellent strength and range of motion after completing rehabilitation and physiotherapy.",
       },
     ],
-
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
 };
 

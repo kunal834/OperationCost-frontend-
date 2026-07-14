@@ -1,12 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ContactForm from "../components/ContactForm.jsx";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { breadcrumbListSchema } from "../lib/schema.js";
 import { Phone, Mail, Clock } from "lucide-react";
 
 const contactInfo = [
   { icon: Phone, title: "Phone Number", value: "+91 98765 43210" },
-  { icon: Mail, title: "Email Address", value: "care@operationcost.com" },
+  { icon: Mail, title: "Email Address", value: "Hello@OperationCost.com" },
   { icon: Clock, title: "Opening Hours", value: "Mon - Sat: 9:00 AM - 8:00 PM" },
 ];
 
@@ -31,6 +32,7 @@ const seo = {
     />
 
     <section class="relative text-center pt-16 pb-10 px-4" data-reveal>
+      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]} />
       <span
         class="inline-block text-xs font-semibold tracking-wide text-brand-600 bg-brand-50 px-3 py-1 rounded-full mb-4"
       >

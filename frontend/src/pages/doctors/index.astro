@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import DoctorSection from "../../components/DoctorSection.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { breadcrumbListSchema } from "../../lib/schema.js";
 
 const seo = {
@@ -23,6 +24,7 @@ const seo = {
       style="animation-delay: -6s"
     />
     <div class="relative max-w-7xl mx-auto px-6 pt-20" data-reveal>
+      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Doctors", path: "/doctors" }]} />
       <h1 class="text-5xl font-bold text-center mb-4 text-neutral-900">Our Expert Doctors</h1>
       <p class="text-center text-neutral-600 mb-10">
         Board-certified orthopedic specialists across joint replacement, spine,

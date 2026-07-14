@@ -1,0 +1,41 @@
+---
+// Visible breadcrumb trail matching the BreadcrumbList JSON-LD passed via
+// breadcrumbListSchema() — Google expects the two to agree.
+import { ChevronRight } from "lucide-react";
+
+const { items, theme = "light" } = Astro.props;
+const isDark = theme === "dark";
+---
+
+<nav
+  aria-label="Breadcrumb"
+  class={`mb-6 text-sm ${isDark ? "text-neutral-300" : "text-neutral-500"}`}
+>
+  <ol class="flex flex-wrap items-center gap-2">
+    {
+      items.map((item, index) => {
+        const isLast = index === items.length - 1;
+        return (
+          <li class="flex items-center gap-2">
+            {isLast ? (
+              <span
+                class={isDark ? "text-white" : "font-medium text-neutral-900"}
+                aria-current="page"
+              >
+                {item.name}
+              </span>
+            ) : (
+              <a
+                href={item.path}
+                class={isDark ? "hover:text-white transition-colors" : "hover:text-brand-600 transition-colors"}
+              >
+                {item.name}
+              </a>
+            )}
+            {!isLast && <ChevronRight size={16} aria-hidden="true" />}
+          </li>
+        );
+      })
+    }
+  </ol>
+</nav>

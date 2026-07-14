@@ -144,8 +144,6 @@ const meniscusTear = {
           "Most patients return to sports within 3–6 months after rehabilitation.",
       },
     ],
-
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
 };
 
