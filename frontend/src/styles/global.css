@@ -14,12 +14,12 @@
   --color-brand-900: #192c6f;
   --color-brand-950: #111b45;
 
-  /* Warm accent — used sparingly for CTA emphasis, ratings, highlights */
-  --color-accent-100: #ffe9d9;
-  --color-accent-300: #ffb98a;
-  --color-accent-500: #ff8a4c;
-  --color-accent-600: #f4701e;
-  --color-accent-700: #d1590f;
+  /* Dark blue accent — used sparingly for CTA emphasis, ratings, highlights */
+  --color-accent-100: #dbe2f5;
+  --color-accent-300: #8fa3d9;
+  --color-accent-500: #33468f;
+  --color-accent-600: #24316b;
+  --color-accent-700: #182247;
 
   /* Single neutral scale, replaces mixed gray/slate usage */
   --color-neutral-50: #f8fafc;

@@ -163,8 +163,6 @@ const spineSurgery = {
           "Yes. Most patients begin walking with assistance within 24 to 48 hours after surgery.",
       },
     ],
-
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
 };
 

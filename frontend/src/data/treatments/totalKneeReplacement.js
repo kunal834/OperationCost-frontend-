@@ -139,8 +139,6 @@ const totalKneeReplacement = {
           "Most knee implants last between 15 and 25 years with proper care.",
       },
     ],
-
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
 };
 

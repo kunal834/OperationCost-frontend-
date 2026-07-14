@@ -11,6 +11,7 @@ import {
   Quote,
   ArrowRight,
 } from "lucide-react";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { doctors } from "../data/doctors.js";
 import { breadcrumbListSchema } from "../lib/schema.js";
 import { imageSrc } from "../lib/image.js";
@@ -82,6 +83,7 @@ const seo = {
       />
       <div class="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         <div data-reveal>
+          <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }]} />
           <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide text-brand-600 bg-brand-100 px-3 py-1.5 rounded-full mb-4">
             <Users size={14} />
             ABOUT OPERATIONCOST
@@ -112,7 +114,8 @@ const seo = {
             width="1170"
             height="320"
             class="w-full h-80 object-cover"
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
           />
         </div>
       </div>

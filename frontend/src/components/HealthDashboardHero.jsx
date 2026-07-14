@@ -378,10 +378,10 @@ export default function HealthDashboardHero() {
             <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold text-brand-300">
               <Sparkles size={14} /> Recovery Intelligence &middot; Live Preview
             </span>
-            <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.08]">
+            <h1 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.08]">
               Every step of recovery,
               <br className="hidden sm:block" /> quantified.
-            </h2>
+            </h1>
             <p className="mt-4 text-white/50 text-base sm:text-lg max-w-lg">
               A real-time view of mobility, pain, and progress &mdash; built so
               patients and surgeons see the same clear picture, day to day.

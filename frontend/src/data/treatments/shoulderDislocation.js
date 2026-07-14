@@ -160,8 +160,6 @@ const shoulderDislocation = {
           "Yes. Most patients return to sports within 3 to 6 months after completing rehabilitation.",
       },
     ],
-
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
 };
 

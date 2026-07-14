@@ -1,8 +1,7 @@
-import logoImage from "../assets/logos/operationcost-logo.png";
 import { imageSrc } from "./image.js";
 
 const SITE_NAME = "OperationCost";
-const SITE_PHONE = "+91 8882892502";
+const SITE_PHONE = "+91 98765 43210";
 
 export function organizationSchema(siteUrl) {
   return {
@@ -10,8 +9,9 @@ export function organizationSchema(siteUrl) {
     "@type": "Organization",
     name: SITE_NAME,
     url: siteUrl,
-    logo: new URL(imageSrc(logoImage), siteUrl).toString(),
+    logo: new URL("/logo.png", siteUrl).toString(),
     telephone: SITE_PHONE,
+    priceRange: "₹600–₹900",
   };
 }
 

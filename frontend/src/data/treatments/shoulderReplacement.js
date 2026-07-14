@@ -154,8 +154,6 @@ const shoulderReplacement = {
           "Most patients return to daily activities within a few weeks, while complete recovery generally takes 4 to 6 months.",
       },
     ],
-
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
 };
 

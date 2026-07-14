@@ -114,9 +114,9 @@ const AdminDashboard = () => {
         </table>
       )}
 
-      <h1 className="text-3xl mt-6 pt-4 border-t-2 font-bold mb-6">
+      <h2 className="text-3xl mt-6 pt-4 border-t-2 font-bold mb-6">
         Patient Queries
-      </h1>
+      </h2>
       <button
         onClick={downloadExcelQueries}
         className="bg-green-600 cursor-pointer text-white px-5 py-2 rounded mb-6"

@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HealthDashboardHero from "../components/HealthDashboardHero.jsx";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { breadcrumbListSchema } from "../lib/schema.js";
 
 const seo = {
@@ -16,5 +17,11 @@ const seo = {
 ---
 
 <Layout seo={seo}>
+  <div class="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
+    <Breadcrumbs
+      theme="dark"
+      items={[{ name: "Home", path: "/" }, { name: "Recovery Dashboard", path: "/platform" }]}
+    />
+  </div>
   <HealthDashboardHero client:visible />
 </Layout>

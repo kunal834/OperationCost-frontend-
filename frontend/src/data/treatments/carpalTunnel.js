@@ -162,8 +162,6 @@ const carpalTunnel = {
           "Yes. Carpal Tunnel Release Surgery has a success rate of over 95%, with most patients experiencing significant relief from pain and numbness.",
       },
     ],
-
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
 };
 
