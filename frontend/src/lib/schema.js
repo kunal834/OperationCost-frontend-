@@ -9,7 +9,6 @@ export function organizationSchema(siteUrl) {
     "@type": "Organization",
     name: SITE_NAME,
     url: siteUrl,
-    logo: new URL("/logo.png", siteUrl).toString(),
     telephone: SITE_PHONE,
     priceRange: "₹600–₹900",
   };
