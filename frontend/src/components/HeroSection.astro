@@ -30,26 +30,37 @@ const stats = [
 ];
 ---
 
-<section class="relative bg-brand-50 py-12 sm:py-16 lg:py-20 overflow-hidden">
-  <div class="pointer-events-none absolute -top-24 -right-24 w-96 h-96 bg-brand-200/40 rounded-full blur-3xl animate-soft-float" />
+<section class="relative overflow-hidden">
+  <Image
+    src={heroImage}
+    alt="Orthopedic doctor consulting a patient"
+    width={1264}
+    height={842}
+    loading="eager"
+    fetchpriority="high"
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+  <div class="absolute inset-0 bg-gradient-to-r from-brand-950/90 via-brand-900/75 to-brand-900/45" />
+
+  <div class="pointer-events-none absolute -top-24 -right-24 w-96 h-96 bg-brand-200/20 rounded-full blur-3xl animate-soft-float" />
   <div
-    class="pointer-events-none absolute bottom-0 -left-24 w-72 h-72 bg-accent-300/20 rounded-full blur-3xl animate-soft-float"
+    class="pointer-events-none absolute bottom-0 -left-24 w-72 h-72 bg-accent-300/10 rounded-full blur-3xl animate-soft-float"
     style="animation-delay: -4s"
   />
 
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-    <div data-reveal>
-      <span class="inline-flex items-center gap-2 bg-brand-100 text-brand-700 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 lg:py-32">
+    <div class="max-w-2xl" data-reveal>
+      <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">
         <ShieldCheck size={16} /> Trusted Orthopedic Care
       </span>
 
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-5 sm:mt-6 leading-[1.05] tracking-tight">
-        <span class="text-neutral-900">Better Movement.</span>
+        <span class="text-white">Better Movement.</span>
         <br />
-        <span class="text-brand-600">Better Life.</span>
+        <span class="text-brand-300">Better Life.</span>
       </h1>
 
-      <p class="text-neutral-600 text-base sm:text-lg mt-5 sm:mt-6 max-w-md">
+      <p class="text-neutral-200 text-base sm:text-lg mt-5 sm:mt-6 max-w-md">
         Advanced orthopedic treatments with expert surgeons, modern
         technology & compassionate care.
       </p>
@@ -57,12 +68,12 @@ const stats = [
       <div class="grid grid-cols-3 gap-2 sm:gap-3 mt-6 sm:mt-8">
         {
           features.map(({ icon: Icon, title, subtitle }) => (
-            <div class="bg-white/70 backdrop-blur-md rounded-2xl border border-white/60 p-3 sm:p-4 shadow-[0_4px_20px_-4px_rgba(34,81,224,0.12)] hover:-translate-y-1 hover:shadow-[0_8px_24px_-4px_rgba(34,81,224,0.18)] transition-all duration-300">
-              <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-brand-50 text-brand-600 mb-2">
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-3 sm:p-4 hover:-translate-y-1 hover:bg-white/15 transition-all duration-300">
+              <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-white/15 text-white mb-2">
                 <Icon size={18} />
               </span>
-              <p class="font-semibold text-neutral-900 text-xs sm:text-sm leading-tight">{title}</p>
-              <p class="text-neutral-500 text-[11px] sm:text-xs mt-0.5">{subtitle}</p>
+              <p class="font-semibold text-white text-xs sm:text-sm leading-tight">{title}</p>
+              <p class="text-neutral-300 text-[11px] sm:text-xs mt-0.5">{subtitle}</p>
             </div>
           ))
         }
@@ -71,57 +82,45 @@ const stats = [
       <div class="flex flex-wrap gap-3 mt-6 sm:mt-8">
         <button
           data-open-popup
-          class="cursor-pointer flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base shadow-lg shadow-brand-600/20 hover:shadow-brand-600/30 hover:-translate-y-0.5 transition-all duration-200"
+          class="cursor-pointer flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base shadow-lg shadow-black/20 hover:-translate-y-0.5 transition-all duration-200"
         >
           <Calendar size={18} /> Book Free Consultation
         </button>
         <a
           href="/about"
-          class="cursor-pointer flex items-center gap-2 border border-brand-200 bg-white/60 backdrop-blur-sm text-brand-600 hover:bg-brand-50 hover:-translate-y-0.5 px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base transition-all duration-200"
+          class="cursor-pointer flex items-center gap-2 border border-white/40 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:-translate-y-0.5 px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base transition-all duration-200"
         >
           <Play size={16} /> How We Help
         </a>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-10 pt-6 border-t border-brand-900/10">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-10 pt-6 border-t border-white/15">
         {
           stats.map(({ icon: Icon, value, label }) => (
             <div class="flex items-center gap-2.5">
-              <span class="flex items-center justify-center w-10 h-10 rounded-full bg-white/70 backdrop-blur-sm text-brand-600 shrink-0">
+              <span class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm text-white shrink-0">
                 <Icon size={17} />
               </span>
               <div>
-                <p class="font-bold text-neutral-900 text-sm sm:text-base leading-tight">{value}</p>
-                <p class="text-neutral-500 text-[11px] sm:text-xs">{label}</p>
+                <p class="font-bold text-white text-sm sm:text-base leading-tight">{value}</p>
+                <p class="text-neutral-300 text-[11px] sm:text-xs">{label}</p>
               </div>
             </div>
           ))
         }
       </div>
     </div>
+  </div>
 
-    <div class="relative h-75 sm:h-100 lg:h-137.5" data-reveal style="transition-delay: 120ms">
-      <Image
-        src={heroImage}
-        alt="Orthopedic doctor consulting a patient"
-        width={800}
-        height={550}
-        loading="eager"
-        fetchpriority="high"
-        class="w-full h-full object-cover rounded-3xl"
-      />
-
-      <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-brand-700/95 backdrop-blur-sm text-white p-4 sm:p-5 rounded-2xl shadow-xl max-w-[80%] sm:max-w-xs flex items-start gap-3">
-        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-white/15 shrink-0">
-          <ShieldCheck size={20} />
-        </span>
-        <div>
-          <p class="font-bold text-sm sm:text-base leading-tight">Safe. Trusted. Proven Care.</p>
-          <p class="text-brand-100 text-xs sm:text-sm mt-1">
-            Your health is our priority. We are with you, every step.
-          </p>
-        </div>
-      </div>
+  <div class="hidden lg:flex absolute bottom-8 right-8 bg-brand-700/95 backdrop-blur-sm text-white p-5 rounded-2xl shadow-xl max-w-xs items-start gap-3">
+    <span class="flex items-center justify-center w-10 h-10 rounded-full bg-white/15 shrink-0">
+      <ShieldCheck size={20} />
+    </span>
+    <div>
+      <p class="font-bold text-sm sm:text-base leading-tight">Safe. Trusted. Proven Care.</p>
+      <p class="text-brand-100 text-xs sm:text-sm mt-1">
+        Your health is our priority. We are with you, every step.
+      </p>
     </div>
   </div>
 </section>
