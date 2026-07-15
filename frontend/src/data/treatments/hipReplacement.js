@@ -6,11 +6,18 @@ const hipReplacement = {
 
     image,
 
+    seoTitle: "Hip Replacement Surgery Cost in Delhi | OperationCost",
+
     heroDescription:
       "Hip Replacement Surgery relieves chronic hip pain by replacing the damaged joint with an artificial implant, helping patients walk comfortably and regain an active lifestyle.",
 
     metaDescription:
-      "Hip replacement surgery cost (₹2L–₹5L) in India, recovery timeline & implant options. Compare experienced orthopedic surgeons for free.",
+      "Hip replacement surgery cost (₹2L–₹5L) in Delhi, recovery timeline & implant options. Compare experienced orthopedic surgeons for free.",
+
+    localSeo: {
+      heading: "Hip Replacement Surgery in Delhi & NCR",
+      body: "Looking for the best orthopedic surgeon for hip replacement in Delhi? OperationCost connects patients across Delhi/NCR and South Delhi with experienced joint replacement specialists, helping you compare implant options, hospital stay, and surgery cost before booking a consultation.",
+    },
 
     overview:
       "Hip replacement is recommended for patients with severe arthritis, fractures, or joint damage that limits everyday activities. The damaged hip joint is replaced with a durable artificial implant to restore movement and reduce pain.",

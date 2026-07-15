@@ -6,11 +6,18 @@ const totalKneeReplacement = {
 
     image,
 
+    seoTitle: "Total Knee Replacement Cost in Delhi | OperationCost",
+
     heroDescription:
       "Total Knee Replacement is an advanced surgical procedure that replaces the damaged knee joint with an artificial implant to relieve pain and restore normal movement.",
 
     metaDescription:
-      "Total Knee Replacement cost, procedure details & 3–6 month recovery timeline in India. Get matched with top joint replacement surgeons for free.",
+      "Total Knee Replacement cost, procedure details & 3–6 month recovery timeline in Delhi. Get matched with top joint replacement surgeons for free.",
+
+    localSeo: {
+      heading: "Total Knee Replacement Surgeons in Delhi/NCR",
+      body: "If you're exploring total knee replacement in Delhi or the wider NCR region, OperationCost helps you connect with orthopedic surgeons experienced in both primary and revision TKR procedures, so you can make an informed decision on the right hospital and surgeon for your recovery.",
+    },
 
     overview:
       "Total Knee Replacement (TKR) is recommended for patients with severe knee arthritis or joint damage who no longer benefit from medicines or physiotherapy. The procedure helps improve mobility, reduce pain, and enhance quality of life.",

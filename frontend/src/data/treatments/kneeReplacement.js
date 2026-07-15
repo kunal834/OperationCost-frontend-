@@ -6,11 +6,18 @@ const kneeReplacement = {
 
     image,
 
+    seoTitle: "Knee Replacement Surgery Cost in Delhi | OperationCost",
+
     heroDescription:
       "Knee replacement surgery relieves chronic knee pain by replacing the damaged joint with an artificial implant, helping patients regain mobility and improve daily life.",
 
     metaDescription:
-      "Compare knee replacement surgery costs (₹1.8L–₹4.5L) in India, recovery timeline & success rates. Connect with experienced orthopedic surgeons for free.",
+      "Compare knee replacement surgery costs (₹1.8L–₹4.5L) in Delhi, recovery timeline & success rates. Connect with experienced orthopedic surgeons for free.",
+
+    localSeo: {
+      heading: "Knee Replacement Surgery in Delhi & South Delhi",
+      body: "Searching for a trusted knee replacement surgeon in Delhi or South Delhi? OperationCost connects you with experienced, board-certified orthopedic and joint replacement surgeons across Delhi/NCR, so you can compare surgeon expertise, hospital facilities, and treatment cost before booking a consultation.",
+    },
 
     overview:
       "Knee replacement is recommended for people with severe arthritis or joint damage when medicines and physiotherapy no longer provide relief. The damaged joint is replaced with an artificial implant that restores movement and reduces pain.",

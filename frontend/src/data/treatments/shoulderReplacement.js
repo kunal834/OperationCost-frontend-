@@ -6,11 +6,18 @@ const shoulderReplacement = {
 
     image,
 
+    seoTitle: "Shoulder Replacement Surgery Cost in Delhi | OperationCost",
+
     heroDescription:
       "Shoulder Replacement Surgery relieves chronic shoulder pain, restores joint function, and helps patients regain strength and mobility using advanced joint replacement techniques.",
 
     metaDescription:
-      "Shoulder replacement surgery cost (₹2.5L–₹6L) in India, recovery timeline & implant types. Compare top orthopedic joint replacement surgeons.",
+      "Shoulder replacement surgery cost (₹2.5L–₹6L) in Delhi, recovery timeline & implant types. Compare top orthopedic joint replacement surgeons.",
+
+    localSeo: {
+      heading: "Shoulder Replacement Surgeons in Delhi",
+      body: "OperationCost helps patients in Delhi/NCR find experienced joint replacement surgeons for shoulder replacement surgery, so you can compare implant types, hospital stay, and surgery cost before choosing the right specialist for your recovery.",
+    },
 
     overview:
       "Shoulder replacement surgery is performed when the shoulder joint is severely damaged due to arthritis, fractures, or degenerative conditions. During the procedure, the damaged portions of the shoulder joint are replaced with artificial implants to reduce pain and improve movement.",

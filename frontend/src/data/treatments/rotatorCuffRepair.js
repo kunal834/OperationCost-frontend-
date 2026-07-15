@@ -6,11 +6,18 @@ const rotatorCuffRepair = {
 
     image,
 
+    seoTitle: "Rotator Cuff Repair Surgery Cost in Delhi | OperationCost",
+
     heroDescription:
       "Rotator Cuff Repair Surgery relieves shoulder pain, restores strength, and improves mobility by repairing torn shoulder tendons using advanced arthroscopic techniques.",
 
     metaDescription:
-      "Rotator cuff repair surgery cost in India, arthroscopic technique & 4–6 month recovery timeline. Compare shoulder surgeons and book a free consult.",
+      "Rotator cuff repair surgery cost in Delhi, arthroscopic technique & 4–6 month recovery timeline. Compare shoulder surgeons and book a free consult.",
+
+    localSeo: {
+      heading: "Rotator Cuff Repair Surgery in Delhi",
+      body: "Looking for a shoulder specialist for rotator cuff repair in Delhi? OperationCost connects you with orthopedic shoulder surgeons experienced in arthroscopic rotator cuff repair, helping you compare treatment approach and cost before booking a consultation.",
+    },
 
     overview:
       "The rotator cuff is a group of muscles and tendons that stabilize the shoulder joint and allow smooth arm movement. A rotator cuff tear can occur due to aging, repetitive overhead activities, sports injuries, or trauma. Depending on the severity of the tear, treatment may include physiotherapy or arthroscopic rotator cuff repair surgery.",
