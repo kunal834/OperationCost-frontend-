@@ -230,6 +230,7 @@ const isActive = (path) =>
   // Close the mobile menu after any in-menu link click.
   menu?.querySelectorAll("a").forEach((a) =>
     a.addEventListener("click", () => setMobileOpen(false)),
+
   );
 
   // Compact + elevate the navbar once the page has scrolled past the top.
