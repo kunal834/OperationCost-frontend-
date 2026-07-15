@@ -6,11 +6,18 @@ const shoulderDislocation = {
 
     image,
 
+    seoTitle: "Shoulder Dislocation Treatment Cost in Delhi | OperationCost",
+
     heroDescription:
       "Shoulder Dislocation Treatment restores shoulder stability, relieves pain, and helps patients safely return to daily activities, work, and sports through advanced orthopedic care.",
 
     metaDescription:
-      "Shoulder dislocation treatment cost & recovery in India — from closed reduction to arthroscopic stabilization surgery. Book a free consultation.",
+      "Shoulder dislocation treatment cost & recovery in Delhi — from closed reduction to arthroscopic stabilization surgery. Book a free consultation.",
+
+    localSeo: {
+      heading: "Shoulder Dislocation Treatment in Delhi",
+      body: "If you've had a shoulder dislocation and are looking for treatment in Delhi, OperationCost connects you with orthopedic shoulder specialists who can guide you through closed reduction, physiotherapy, or arthroscopic stabilization surgery based on your condition.",
+    },
 
     overview:
       "A shoulder dislocation occurs when the upper arm bone (humerus) comes out of the shoulder socket due to trauma, falls, sports injuries, or accidents. Depending on the severity, treatment may involve closed reduction, immobilization, physiotherapy, or arthroscopic surgery to repair damaged ligaments and prevent recurrent dislocations.",

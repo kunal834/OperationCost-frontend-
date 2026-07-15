@@ -6,11 +6,18 @@ const aclTear = {
 
     image,
 
+    seoTitle: "ACL Surgery Cost & Treatment in Delhi | OperationCost",
+
     heroDescription:
       "ACL Tear Treatment helps restore knee stability, reduce pain, and safely return patients to sports and daily activities through advanced rehabilitation or minimally invasive surgery.",
 
     metaDescription:
-      "ACL tear treatment cost in India, from physiotherapy to arthroscopic reconstruction. Learn symptoms, recovery time & book a free sports injury consult.",
+      "ACL tear treatment cost in Delhi, from physiotherapy to arthroscopic reconstruction. Learn symptoms, recovery time & book a free sports injury consult.",
+
+    localSeo: {
+      heading: "ACL Surgery Doctors in Delhi",
+      body: "Athletes and active individuals in Delhi looking for ACL surgery can connect with sports injury specialists and arthroscopic knee surgeons through OperationCost, comparing recovery approaches and treatment cost before choosing a surgeon near you.",
+    },
 
     overview:
       "An ACL (Anterior Cruciate Ligament) tear is a common knee injury caused by sudden twisting, landing, or sports activities. Depending on the severity, treatment may include physiotherapy or arthroscopic ACL reconstruction surgery.",

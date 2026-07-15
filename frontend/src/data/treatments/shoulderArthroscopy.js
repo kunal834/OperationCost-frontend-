@@ -6,11 +6,18 @@ const shoulderArthroscopy = {
 
     image,
 
+    seoTitle: "Shoulder Arthroscopy Surgery Cost in Delhi | OperationCost",
+
     heroDescription:
       "Shoulder Arthroscopy is a minimally invasive procedure used to diagnose and treat shoulder conditions through tiny incisions, providing less pain, faster recovery, and improved shoulder function.",
 
     metaDescription:
-      "Shoulder arthroscopy surgery cost in India for rotator cuff tears, labral repair & frozen shoulder. Compare specialists and book a free consult.",
+      "Shoulder arthroscopy surgery cost in Delhi for rotator cuff tears, labral repair & frozen shoulder. Compare specialists and book a free consult.",
+
+    localSeo: {
+      heading: "Shoulder Arthroscopy Surgeons in Delhi",
+      body: "Whether you need treatment for a rotator cuff tear, frozen shoulder, or labral tear, OperationCost helps you find experienced shoulder arthroscopy surgeons in Delhi/NCR to compare treatment options and surgery cost.",
+    },
 
     overview:
       "Shoulder arthroscopy is an advanced orthopedic procedure performed using a small camera called an arthroscope. It allows surgeons to diagnose and treat various shoulder disorders such as rotator cuff tears, shoulder instability, labral tears, impingement syndrome, frozen shoulder, and damaged cartilage with minimal tissue disruption.",

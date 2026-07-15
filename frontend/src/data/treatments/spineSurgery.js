@@ -6,11 +6,18 @@ const spineSurgery = {
 
     image,
 
+    seoTitle: "Spine Surgery Cost in Delhi | OperationCost",
+
     heroDescription:
       "Spine Surgery helps relieve chronic back or neck pain, restore mobility, and improve quality of life through advanced minimally invasive and open surgical techniques.",
 
     metaDescription:
-      "Spine surgery cost in India for herniated discs, spinal stenosis & fractures. Compare minimally invasive options and top spine surgeons for free.",
+      "Spine surgery cost in Delhi for slip disc (herniated disc), spinal stenosis, back pain & fractures. Compare minimally invasive options and top spine surgeons for free.",
+
+    localSeo: {
+      heading: "Spine Surgery & Slip Disc Treatment in Delhi",
+      body: "For back pain, slip disc, or spinal stenosis, OperationCost helps you connect with qualified spine surgeons and orthopedic specialists in Delhi/NCR, comparing minimally invasive and traditional spine surgery options along with treatment cost before you decide.",
+    },
 
     overview:
       "Spine surgery is recommended for patients suffering from severe back or neck pain caused by spinal disorders that do not improve with medications, physiotherapy, or lifestyle changes. Depending on the condition, minimally invasive or traditional surgery may be performed to relieve pressure on nerves and stabilize the spine.",

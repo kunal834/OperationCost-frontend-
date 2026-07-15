@@ -6,11 +6,18 @@ const carpalTunnel = {
 
     image,
 
+    seoTitle: "Carpal Tunnel Syndrome Treatment Cost in Delhi | OperationCost",
+
     heroDescription:
       "Carpal Tunnel Syndrome Treatment relieves numbness, tingling, pain, and weakness in the hand by reducing pressure on the median nerve through advanced non-surgical care or minimally invasive surgery.",
 
     metaDescription:
-      "Carpal tunnel syndrome treatment cost in India — wrist splints to carpal tunnel release surgery. Compare hand surgeons and book a free consultation.",
+      "Carpal tunnel syndrome treatment cost in Delhi — wrist splints to carpal tunnel release surgery. Compare hand surgeons and book a free consultation.",
+
+    localSeo: {
+      heading: "Carpal Tunnel Treatment in Delhi",
+      body: "Experiencing hand numbness or wrist pain? OperationCost connects you with orthopedic hand surgeons in Delhi/NCR for carpal tunnel syndrome treatment, from wrist splinting to carpal tunnel release surgery.",
+    },
 
     overview:
       "Carpal Tunnel Syndrome (CTS) is a common condition caused by compression of the median nerve as it passes through the carpal tunnel in the wrist. It often develops gradually due to repetitive hand movements, prolonged computer use, certain medical conditions, or wrist injuries. Early treatment helps prevent permanent nerve damage and restores normal hand function.",

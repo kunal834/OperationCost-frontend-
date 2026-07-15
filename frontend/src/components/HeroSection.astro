@@ -10,7 +10,7 @@ import {
   Trophy,
   PhoneCall,
 } from "lucide-react";
-import heroImage from "../assets/hero/doctor-consultation.png";
+import heroImage from "../assets/hero/image.png";
 
 const features = [
   { icon: Users, title: "Expert Surgeons", subtitle: "Highly Experienced" },
@@ -108,9 +108,8 @@ const stats = [
         height={550}
         loading="eager"
         fetchpriority="high"
-        class="w-full h-full object-cover rounded-3xl hero-mask"
+        class="w-full h-full object-cover rounded-3xl"
       />
-      <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-brand-50 to-transparent rounded-l-3xl" />
 
       <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-brand-700/95 backdrop-blur-sm text-white p-4 sm:p-5 rounded-2xl shadow-xl max-w-[80%] sm:max-w-xs flex items-start gap-3">
         <span class="flex items-center justify-center w-10 h-10 rounded-full bg-white/15 shrink-0">
@@ -126,14 +125,3 @@ const stats = [
     </div>
   </div>
 </section>
-
-<style>
-  .hero-mask {
-    mask-image:
-      linear-gradient(to right, transparent, black 12%),
-      radial-gradient(ellipse at center, black 70%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 12%);
-    -webkit-mask-composite: source-in;
-    mask-composite: intersect;
-  }
-</style>
