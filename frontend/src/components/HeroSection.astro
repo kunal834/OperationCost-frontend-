@@ -40,27 +40,25 @@ const stats = [
     fetchpriority="high"
     class="absolute inset-0 h-full w-full object-cover"
   />
-  <div class="absolute inset-0 bg-gradient-to-r from-brand-950/90 via-brand-900/75 to-brand-900/45" />
-
   <div class="pointer-events-none absolute -top-24 -right-24 w-96 h-96 bg-brand-200/20 rounded-full blur-3xl animate-soft-float" />
   <div
     class="pointer-events-none absolute bottom-0 -left-24 w-72 h-72 bg-accent-300/10 rounded-full blur-3xl animate-soft-float"
     style="animation-delay: -4s"
   />
 
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 lg:py-32">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8 lg:pt-10 pb-16 sm:pb-24 lg:pb-32">
     <div class="max-w-2xl" data-reveal>
-      <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">
+      <span class="inline-flex items-center gap-2 bg-white/85 backdrop-blur-sm border border-neutral-200 text-neutral-800 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold shadow-sm">
         <ShieldCheck size={16} /> Trusted Orthopedic Care
       </span>
 
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-5 sm:mt-6 leading-[1.05] tracking-tight">
-        <span class="text-white">Better Movement.</span>
+        <span class="text-neutral-900">Better Movement.</span>
         <br />
-        <span class="text-brand-300">Better Life.</span>
+        <span class="text-brand-600">Better Life.</span>
       </h1>
 
-      <p class="text-neutral-200 text-base sm:text-lg mt-5 sm:mt-6 max-w-md">
+      <p class="text-neutral-700 text-base sm:text-lg mt-5 sm:mt-6 max-w-md">
         Advanced orthopedic treatments with expert surgeons, modern
         technology & compassionate care.
       </p>
@@ -68,12 +66,12 @@ const stats = [
       <div class="grid grid-cols-3 gap-2 sm:gap-3 mt-6 sm:mt-8">
         {
           features.map(({ icon: Icon, title, subtitle }) => (
-            <div class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-3 sm:p-4 hover:-translate-y-1 hover:bg-white/15 transition-all duration-300">
-              <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-white/15 text-white mb-2">
+            <div class="bg-white/85 backdrop-blur-md rounded-2xl border border-neutral-200 p-3 sm:p-4 shadow-sm hover:-translate-y-1 hover:bg-white transition-all duration-300">
+              <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-brand-600 text-white mb-2">
                 <Icon size={18} />
               </span>
-              <p class="font-semibold text-white text-xs sm:text-sm leading-tight">{title}</p>
-              <p class="text-neutral-300 text-[11px] sm:text-xs mt-0.5">{subtitle}</p>
+              <p class="font-semibold text-neutral-900 text-xs sm:text-sm leading-tight">{title}</p>
+              <p class="text-neutral-500 text-[11px] sm:text-xs mt-0.5">{subtitle}</p>
             </div>
           ))
         }
@@ -88,22 +86,22 @@ const stats = [
         </button>
         <a
           href="/about"
-          class="cursor-pointer flex items-center gap-2 border border-white/40 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:-translate-y-0.5 px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base transition-all duration-200"
+          class="cursor-pointer flex items-center gap-2 border border-neutral-200 bg-white/85 backdrop-blur-sm text-neutral-800 hover:bg-white hover:-translate-y-0.5 px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base shadow-sm transition-all duration-200"
         >
           <Play size={16} /> How We Help
         </a>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-10 pt-6 border-t border-white/15">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-10 pt-6 border-t border-neutral-200">
         {
           stats.map(({ icon: Icon, value, label }) => (
             <div class="flex items-center gap-2.5">
-              <span class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm text-white shrink-0">
+              <span class="flex items-center justify-center w-10 h-10 rounded-full bg-brand-50 text-brand-600 shrink-0">
                 <Icon size={17} />
               </span>
               <div>
-                <p class="font-bold text-white text-sm sm:text-base leading-tight">{value}</p>
-                <p class="text-neutral-300 text-[11px] sm:text-xs">{label}</p>
+                <p class="font-bold text-neutral-900 text-sm sm:text-base leading-tight">{value}</p>
+                <p class="text-neutral-500 text-[11px] sm:text-xs">{label}</p>
               </div>
             </div>
           ))
