@@ -71,7 +71,7 @@ export const doctors = [
       clinic: "OperationCost Ortho Center",
       address: "Sector 34, Chandigarh",
     },
-    fee: 700,
+    fee: 800,
   },
   {
     id: 3,
@@ -97,7 +97,7 @@ export const doctors = [
       clinic: "OperationCost Sports Injury Clinic",
       address: "Sector 22, Chandigarh",
     },
-    fee: 750,
+    fee: 800,
   },
   {
     id: 4,
@@ -123,7 +123,7 @@ export const doctors = [
       clinic: "OperationCost Spine Care",
       address: "Sector 34, Chandigarh",
     },
-    fee: 900,
+    fee: 800,
   },
   {
     id: 5,
@@ -149,7 +149,7 @@ export const doctors = [
       clinic: "OperationCost Trauma Center",
       address: "Sector 43, Chandigarh",
     },
-    fee: 850,
+    fee: 800,
   },
   {
     id: 6,
@@ -175,7 +175,7 @@ export const doctors = [
       clinic: "OperationCost Ortho Center",
       address: "Sector 34, Chandigarh",
     },
-    fee: 650,
+    fee: 800,
   },
   {
     id: 7,
@@ -205,7 +205,7 @@ export const doctors = [
       clinic: "OperationCost Children's Ortho Clinic",
       address: "Sector 22, Chandigarh",
     },
-    fee: 700,
+    fee: 800,
   },
   {
     id: 8,
@@ -235,7 +235,7 @@ export const doctors = [
       clinic: "OperationCost Rheumatology Wing",
       address: "Sector 34, Chandigarh",
     },
-    fee: 600,
+    fee: 800,
   },
   {
     id: 9,
@@ -261,6 +261,6 @@ export const doctors = [
       clinic: "OperationCost Sports Injury Clinic",
       address: "Sector 22, Chandigarh",
     },
-    fee: 750,
+    fee: 800,
   },
 ];

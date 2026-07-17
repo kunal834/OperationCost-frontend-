@@ -38,7 +38,7 @@ const stats = [
     height={842}
     loading="eager"
     fetchpriority="high"
-    class="absolute inset-0 h-full w-full object-cover"
+    class="hidden lg:block absolute inset-0 h-full w-full object-cover"
   />
   <div class="pointer-events-none absolute -top-24 -right-24 w-96 h-96 bg-brand-200/20 rounded-full blur-3xl animate-soft-float" />
   <div
@@ -48,6 +48,16 @@ const stats = [
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8 lg:pt-10 pb-16 sm:pb-24 lg:pb-32">
     <div class="max-w-2xl" data-reveal>
+      <Image
+        src={heroImage}
+        alt="Orthopedic doctor consulting a patient"
+        width={800}
+        height={500}
+        loading="eager"
+        fetchpriority="high"
+        class="lg:hidden w-full h-56 sm:h-72 object-cover object-top rounded-2xl shadow-md mb-6"
+      />
+
       <span class="inline-flex items-center gap-2 bg-white/85 backdrop-blur-sm border border-neutral-200 text-neutral-800 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold shadow-sm">
         <ShieldCheck size={16} /> Trusted Orthopedic Care
       </span>

@@ -1,7 +1,7 @@
 import { imageSrc } from "./image.js";
 
 const SITE_NAME = "OperationCost";
-const SITE_PHONE = "+91 98765 43210";
+const SITE_PHONE = "+91 99111 85858";
 
 export function organizationSchema(siteUrl) {
   return {
